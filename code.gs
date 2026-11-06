@@ -65,15 +65,72 @@ const COL_RESERVASI = {
 };
 
 /**
- * Handler HTTP GET untuk menyajikan antarmuka Web App
+ * Handler HTTP GET (Dual-Mode: Menyajikan HTML Web App atau JSON REST API untuk Vercel/Netlify)
  */
 function doGet(e) {
+  // Mode REST API JSON untuk Vercel / Netlify / Domain Luar
+  if (e && e.parameter && e.parameter.action) {
+    var action = e.parameter.action;
+    var output = {};
+
+    if (action === 'getInitialData') {
+      output = getAppInitialData();
+    } else if (action === 'submitReservasi') {
+      try {
+        var payload = e.parameter.data ? JSON.parse(e.parameter.data) : e.parameter;
+        output = submitReservasi(payload);
+      } catch (err) {
+        output = { success: false, message: 'Gagal memproses reservasi: ' + err.message };
+      }
+    } else {
+      output = { success: false, message: 'Aksi API tidak dikenali: ' + action };
+    }
+
+    return ContentService.createTextOutput(JSON.stringify(output))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  // Mode Web App Bawaan jika dibuka langsung di script.google.com
   var htmlOutput = HtmlService.createHtmlOutputFromFile('index')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     .setTitle('Rumah Air Bogor Resto | Official Web Hub & Pamflet Digital')
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 
   return htmlOutput;
+}
+
+/**
+ * Handler HTTP POST (Menerima input reservasi dari frontend eksternal Vercel / Netlify)
+ */
+function doPost(e) {
+  var output = {};
+  try {
+    var payload = {};
+    if (e && e.postData && e.postData.contents) {
+      try {
+        payload = JSON.parse(e.postData.contents);
+      } catch (pErr) {
+        payload = e.parameter || {};
+      }
+    } else if (e && e.parameter) {
+      payload = e.parameter.data ? JSON.parse(e.parameter.data) : e.parameter;
+    }
+
+    var action = (e && e.parameter && e.parameter.action) || payload.action || 'submitReservasi';
+
+    if (action === 'submitReservasi') {
+      output = submitReservasi(payload);
+    } else if (action === 'getInitialData') {
+      output = getAppInitialData();
+    } else {
+      output = { success: false, message: 'Aksi POST tidak dikenali.' };
+    }
+  } catch (err) {
+    output = { success: false, message: 'Error pada server doPost: ' + err.message };
+  }
+
+  return ContentService.createTextOutput(JSON.stringify(output))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**

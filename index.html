@@ -6,6 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Rumah Air Bogor Resto | Official Web Hub & Pamflet Digital</title>
 
+  <!-- Favicon & Touch Icon (Tampil di Tab Browser & Bookmark) -->
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+  <link rel="shortcut icon" href="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+  <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+
+  <!-- Open Graph & Social Media Preview (Logo Tampil di Atas Link Vercel/Netlify saat Dibagikan di WA/Sosmed) -->
+  <meta name="description" content="Sensasi Kuliner Saung Danau & Wisata Keluarga Khas Sunda Nusantara. Reservasi Saung, Buku Menu PDF & Paket Acara di Bogor Nirwana Residence.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rumah Air Bogor Resto | Official Web Hub & Pamflet Digital">
+  <meta property="og:description" content="Sensasi Kuliner Saung Danau & Wisata Keluarga Khas Sunda Nusantara. Buka Setiap Hari di Bogor Nirwana Residence.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+  <meta property="og:image:secure_url" content="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="Logo Rumah Air Bogor Resto">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rumah Air Bogor Resto">
+  <meta name="twitter:description" content="Sensasi Kuliner Saung Danau & Wisata Keluarga Khas Sunda Nusantara.">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-">
+
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -904,6 +925,11 @@
 
   <!-- JAVASCRIPT LOGIC & STATE MANAGEMENT -->
   <script>
+    // ============================================================================
+    // KONFIGURASI BACKEND API (HYBRID DEPLOYMENT: VERCEL / NETLIFY / GOOGLE APPS SCRIPT)
+    // ============================================================================
+    const APPS_SCRIPT_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzUzLfqy65QfK_CyviCa-JVRA5yZCGNQHqyaTwgevtg5X8KXfMLYOD8oWFVvpD9xqeuhw/exec';
+
     // CLIENT-SIDE IN-MEMORY STATE (0 Detik Loading Berulang)
     const APP_STATE = {
       profile: {
@@ -982,26 +1008,51 @@
     });
 
     /**
-     * Memanggil backend Google Apps Script secara aman
+     * Memanggil backend Google Apps Script secara aman (Dual-Mode: Native GAS / Vercel / Netlify)
      */
     function loadDataFromBackend() {
+      // Jalur 1: Berjalan di dalam lingkungan asli Google Apps Script (script.google.com)
       if (typeof google !== 'undefined' && google.script && google.script.run) {
         google.script.run
           .withSuccessHandler(function (response) {
-            if (response && response.success) {
-              if (response.profile) APP_STATE.profile = response.profile;
-              if (response.bannerMenu && response.bannerMenu.length > 0) APP_STATE.bannerMenu = response.bannerMenu;
-              if (response.galeri && response.galeri.length > 0) APP_STATE.galeri = response.galeri;
-              if (response.menu && response.menu.length > 0) APP_STATE.menu = response.menu;
-              if (response.promo && Array.isArray(response.promo)) APP_STATE.promo = response.promo;
-              renderAppUI();
-              showToast('Data restoran berhasil disinkronkan', 'success');
-            }
+            handleBackendResponse(response);
           })
           .withFailureHandler(function (error) {
-            console.warn('Gagal memuat dari Apps Script, menggunakan cache lokal:', error);
+            console.warn('Gagal memuat dari Apps Script runtime:', error);
           })
           .getAppInitialData();
+      }
+      // Jalur 2: Berjalan di Vercel, Netlify, GitHub Pages, atau Localhost via REST API
+      else if (APPS_SCRIPT_WEBAPP_URL && APPS_SCRIPT_WEBAPP_URL.trim() !== '') {
+        var apiUrl = APPS_SCRIPT_WEBAPP_URL.trim();
+        var separator = (apiUrl.indexOf('?') === -1) ? '?' : '&';
+        var endpoint = apiUrl + separator + 'action=getInitialData&t=' + Date.now();
+
+        fetch(endpoint)
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP status ' + res.status);
+            return res.json();
+          })
+          .then(function (response) {
+            handleBackendResponse(response);
+          })
+          .catch(function (error) {
+            console.warn('Gagal memuat dari Google Sheets REST API:', error);
+            // Tetap render UI dengan fallback lokal
+            renderAppUI();
+          });
+      }
+    }
+
+    function handleBackendResponse(response) {
+      if (response && response.success) {
+        if (response.profile) APP_STATE.profile = response.profile;
+        if (response.bannerMenu && response.bannerMenu.length > 0) APP_STATE.bannerMenu = response.bannerMenu;
+        if (response.galeri && response.galeri.length > 0) APP_STATE.galeri = response.galeri;
+        if (response.menu && response.menu.length > 0) APP_STATE.menu = response.menu;
+        if (response.promo && Array.isArray(response.promo)) APP_STATE.promo = response.promo;
+        renderAppUI();
+        showToast('Data restoran berhasil disinkronkan', 'success');
       }
     }
 
@@ -1945,43 +1996,68 @@
       btn.classList.add('opacity-75', 'cursor-not-allowed');
       btnText.textContent = 'Memproses Reservasi...';
 
-      // Jika berjalan di lingkungan Google Apps Script
+      // Mode 1: Berjalan di Google Apps Script (script.google.com)
       if (typeof google !== 'undefined' && google.script && google.script.run) {
         google.script.run
           .withSuccessHandler(function (response) {
-            btn.disabled = false;
-            btn.classList.remove('opacity-75', 'cursor-not-allowed');
-            btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
-
-            if (response && response.success) {
-              showSuccessModal(response.noReservasi, response.waUrl);
-              document.getElementById('bookingForm').reset();
-            } else {
-              showToast((response && response.message) || 'Gagal memproses reservasi.', 'error');
-            }
+            handleBookingResult(response, payload, btn, btnText);
           })
           .withFailureHandler(function (error) {
-            // Anti-Deadlock: kembalikan tombol jika koneksi bermasalah
-            btn.disabled = false;
-            btn.classList.remove('opacity-75', 'cursor-not-allowed');
-            btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
-            showToast('Kendala jaringan. Mengarahkan langsung ke WhatsApp...', 'info');
-
-            // Fallback langsung buat WA link darurat
-            directFallbackWA(payload);
+            handleBookingFallback(payload, btn, btnText);
           })
           .submitReservasi(payload);
-      } else {
-        // Safe Preview Mode (Offline / Localhost)
-        setTimeout(function () {
-          btn.disabled = false;
-          btn.classList.remove('opacity-75', 'cursor-not-allowed');
-          btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+      }
+      // Mode 2: Berjalan di Vercel, Netlify, GitHub Pages (Kirim Reservasi via REST API)
+      else if (APPS_SCRIPT_WEBAPP_URL && APPS_SCRIPT_WEBAPP_URL.trim() !== '') {
+        var apiUrl = APPS_SCRIPT_WEBAPP_URL.trim();
+        var separator = (apiUrl.indexOf('?') === -1) ? '?' : '&';
+        var endpoint = apiUrl + separator + 'action=submitReservasi&data=' + encodeURIComponent(JSON.stringify(payload));
 
-          var demoID = 'RAB-' + new Date().getFullYear() + '11-001';
-          var waFallbackUrl = directFallbackWA(payload, true);
-          showSuccessModal(demoID, waFallbackUrl);
+        fetch(endpoint)
+          .then(function (res) { return res.json(); })
+          .then(function (response) {
+            handleBookingResult(response, payload, btn, btnText);
+          })
+          .catch(function (err) {
+            console.warn('Gagal via REST API, mengarahkan ke fallback WA:', err);
+            handleBookingFallback(payload, btn, btnText);
+          });
+      }
+      // Mode 3: Safe Preview Mode (Offline / Localhost)
+      else {
+        setTimeout(function () {
+          handleBookingFallback(payload, btn, btnText, true);
         }, 600);
+      }
+    }
+
+    function handleBookingResult(response, payload, btn, btnText) {
+      btn.disabled = false;
+      btn.classList.remove('opacity-75', 'cursor-not-allowed');
+      btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+
+      if (response && response.success) {
+        showSuccessModal(response.noReservasi, response.waUrl);
+        var form = document.getElementById('bookingForm');
+        if (form) form.reset();
+      } else {
+        showToast((response && response.message) || 'Gagal memproses reservasi.', 'error');
+        directFallbackWA(payload);
+      }
+    }
+
+    function handleBookingFallback(payload, btn, btnText, isPreview) {
+      btn.disabled = false;
+      btn.classList.remove('opacity-75', 'cursor-not-allowed');
+      btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+
+      if (isPreview) {
+        var demoID = 'RAB-' + new Date().getFullYear() + '11-001';
+        var waFallbackUrl = directFallbackWA(payload, true);
+        showSuccessModal(demoID, waFallbackUrl);
+      } else {
+        showToast('Kendala jaringan. Mengarahkan langsung ke WhatsApp...', 'info');
+        directFallbackWA(payload);
       }
     }
 
