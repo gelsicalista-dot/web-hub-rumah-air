@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rumah Air Bogor Resto | Official Web Hub & Pamflet Digital</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F0FDF4',
+              100: '#DCFCE7',
+              600: '#16A34A',
+              700: '#15803D',
+              800: '#166534',
+              900: '#14532D',
+              deep: '#134E4A',      // Forest Pine Emerald
+              deeper: '#042F2E',
+            },
+            amber: {
+              warm: '#D97706',
+              dark: '#B45309',
+              light: '#FEF3C7',
+            },
+            cream: '#FAF8F5',
+            surface: '#FFFFFF',
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(19, 78, 74, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)',
+            'card': '0 8px 30px rgba(0, 0, 0, 0.06)',
+            'floating': '0 12px 40px rgba(19, 78, 74, 0.16)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #1E293B;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar for Menu Categories */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Badge Pulse Animation */
+    @keyframes subtlePulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.85;
+        transform: scale(1.03);
+      }
+    }
+
+    .badge-pulse {
+      animation: subtlePulse 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-deep selection:text-white">
+
+  <!-- TOP STICKY STATUS BAR -->
+  <header
+    class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-stone-200/80 transition-all duration-200">
+    <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Brand Pill with Official Logo -->
+      <div class="flex items-center space-x-2.5">
+        <div
+          class="w-8 h-8 rounded-full overflow-hidden bg-white text-brand-deep flex items-center justify-center font-bold text-xs shadow-sm ring-2 ring-emerald-500/30 shrink-0 relative p-0.5"
+          style="background-color: #ffffff !important;">
+          <img id="topBarLogoImg" src="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-"
+            alt="Logo Rumah Air Bogor" class="w-full h-full object-contain"
+            onerror="this.style.display='none'; document.getElementById('topBarLogoFallback').classList.remove('hidden');">
+          <span id="topBarLogoFallback" class="hidden text-brand-deep font-bold">RAB</span>
+        </div>
+        <div>
+          <h1 class="text-xs font-bold uppercase tracking-wider text-stone-900 leading-tight">Rumah Air Bogor</h1>
+          <div class="flex items-center space-x-1.5 mt-0.5">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="headerStatusText" class="text-[11px] font-semibold text-emerald-700">Buka Hari Ini (10:00 -
+              21:00)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Header -->
+      <a href="#reservasiSection"
+        class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-amber-warm hover:bg-amber-dark text-white text-xs font-semibold shadow-sm transition-all duration-200 active:scale-95">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span>Reservasi</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (Mobile-First Hub) -->
+  <main class="flex-grow max-w-2xl w-full mx-auto px-4 pt-4 pb-16 space-y-6">
+
+    <!-- HERO PROFILE CARD (Anti-AI Human Crafted Aesthetic) -->
+    <section class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-stone-200/70">
+      <!-- Cover Image / Hero Slideshow Container -->
+      <div id="heroSliderContainer" class="relative h-44 sm:h-56 w-full overflow-hidden bg-brand-deep select-none">
+        <!-- Slides Wrapper (0 Detik: Langsung Tampil Foto Banner Resmi) -->
+        <div id="heroSlidesWrapper" class="w-full h-full relative">
+          <div id="heroSlide_0" class="hero-slide absolute inset-0 w-full h-full opacity-100 z-1">
+            <img src="https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5"
+              alt="Suasana Rumah Air Bogor Resto" class="w-full h-full object-cover object-center">
+          </div>
+        </div>
+
+        <!-- Dark Gradient Overlay for Readability -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent pointer-events-none z-10">
+        </div>
+
+        <!-- Slider Dots Indicator (if > 1 image) -->
+        <div id="heroSliderDots"
+          class="absolute bottom-2.5 left-1/2 transform -translate-x-1/2 flex items-center space-x-1.5 z-20">
+        </div>
+
+        <!-- Floating Badge -->
+        <div
+          class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-brand-deep shadow-sm flex items-center space-x-1 z-20">
+          <svg class="w-3.5 h-3.5 text-amber-warm fill-amber-warm" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+            </path>
+          </svg>
+          <span>Restoran Sunda Favorit Keluarga</span>
+        </div>
+      </div>
+
+      <!-- Profile Details -->
+      <div class="px-5 pt-0 pb-6 relative">
+        <!-- Logo Avatar Resmi Rumah Air Bogor (Solid Opaque White Background) -->
+        <div class="flex justify-between items-end -mt-12 mb-3">
+          <div
+            class="relative z-20 w-24 h-24 rounded-2xl bg-white p-2 shadow-card border-2 border-white overflow-hidden flex items-center justify-center ring-4 ring-black/5"
+            style="background-color: #ffffff !important;">
+            <img id="restoLogoImg" src="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-"
+              alt="Logo Rumah Air Bogor"
+              onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-';"
+              class="w-full h-full object-contain">
+          </div>
+          <!-- Verified Badge -->
+          <div
+            class="flex items-center space-x-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-semibold border border-emerald-200">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Akun Resmi</span>
+          </div>
+        </div>
+
+        <!-- Resto Title & Description -->
+        <h2 id="restoTitle" class="text-xl sm:text-2xl font-extrabold text-stone-900 tracking-tight">Rumah Air Bogor
+          Resto</h2>
+        <p id="restoTagline" class="text-sm text-stone-600 mt-1 leading-relaxed">
+          Indonesian Culinary Heritage.
+        </p>
+
+        <!-- Location Pin Pill -->
+        <a id="linkAlamat" href="https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence" target="_blank"
+          class="inline-flex items-center space-x-2 mt-3 text-xs text-stone-700 bg-stone-100/90 hover:bg-stone-200/90 px-3 py-2 rounded-xl border border-stone-200/80 transition-colors">
+          <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+            </path>
+          </svg>
+          <span id="restoAlamatText" class="truncate font-medium">Jl. Raya Boulevard CBD Bogor Nirwana Residence,
+            Bogor</span>
+          <svg class="w-3.5 h-3.5 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <!-- 3 QUICK ACTION BUTTONS (GRID) -->
+        <div class="grid grid-cols-3 gap-2.5 mt-5">
+          <!-- Action 1: Direct WhatsApp -->
+          <a id="btnDirectWA"
+            href="https://api.whatsapp.com/send?phone=6281111861853&text=Halo%20Admin%20Rumah%20Air%20Bogor%20Resto%2C%20saya%20ingin%20tanya%20informasi%20resto."
+            target="_blank"
+            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100/90 border border-emerald-200/70 text-emerald-900 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            <div
+              class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.297.144.35.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z" />
+              </svg>
+            </div>
+            <span class="text-xs">Chat WA</span>
+          </a>
+
+          <!-- Action 2: Menu PDF Direct Link -->
+          <a id="btnDirectMenu" href="#" target="_blank"
+            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-amber-50 hover:bg-amber-100/90 border border-amber-200/70 text-amber-900 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            <div
+              class="w-9 h-9 rounded-xl bg-amber-warm text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+              </svg>
+            </div>
+            <span class="text-xs">Buku Menu</span>
+          </a>
+
+          <!-- Action 3: Lokasi Maps -->
+          <a id="btnDirectMaps" href="https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence" target="_blank"
+            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-stone-100 hover:bg-stone-200/90 border border-stone-200 text-stone-800 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            <div
+              class="w-9 h-9 rounded-xl bg-stone-800 text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7">
+                </path>
+              </svg>
+            </div>
+            <span class="text-xs">Petunjuk Arah</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT RESTO (GRID 3 TOMBOL AKSI: BUFFET, MEETING & GALERI) -->
+    <section class="grid grid-cols-3 gap-2 sm:gap-3">
+      <!-- Tombol 1: Buffet Package (Event & Wedding) -->
+      <button type="button" onclick="openBuffetModal()"
+        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-amber-50/60 border border-stone-200/90 hover:border-amber-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        <span
+          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-amber-warm text-[9px] font-extrabold text-white shadow-2xs tracking-tight">2
+          Paket</span>
+        <div
+          class="w-9 h-9 mx-auto rounded-xl bg-amber-100/80 text-amber-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+            </path>
+          </svg>
+        </div>
+        <p class="text-[11px] font-bold text-stone-900 leading-tight">Buffet Package</p>
+        <p class="text-[10px] text-stone-500 mt-0.5">Event & Wedding</p>
+      </button>
+
+      <!-- Tombol 2: Meeting Package -->
+      <button type="button" onclick="openMeetingPdfModal()"
+        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-emerald-50/60 border border-stone-200/90 hover:border-emerald-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        <span
+          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-emerald-700 text-[9px] font-extrabold text-white shadow-2xs tracking-tight">PDF</span>
+        <div
+          class="w-9 h-9 mx-auto rounded-xl bg-emerald-100/80 text-emerald-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+            </path>
+          </svg>
+        </div>
+        <p class="text-[11px] font-bold text-stone-900 leading-tight">Meeting Package</p>
+        <p class="text-[10px] text-stone-500 mt-0.5">Bisnis & Arisan</p>
+      </button>
+
+      <!-- Tombol 3: Galeri Resto -->
+      <button type="button" onclick="openGalleryModal()"
+        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-sky-50/60 border border-stone-200/90 hover:border-sky-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        <span
+          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-sky-700 text-[9px] font-extrabold text-white shadow-2xs tracking-tight">Foto</span>
+        <div
+          class="w-9 h-9 mx-auto rounded-xl bg-sky-100/80 text-sky-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+            </path>
+          </svg>
+        </div>
+        <p class="text-[11px] font-bold text-stone-900 leading-tight">Galeri Resto</p>
+        <p class="text-[10px] text-stone-500 mt-0.5">Suasana & Danau</p>
+      </button>
+    </section>
+
+    <!-- BANNER PROMO & EVENT SPESIAL -->
+    <section id="promoSection" class="space-y-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-warm"></span>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-stone-800">Promo & Paket Spesial</h3>
+        </div>
+        <span class="text-xs text-stone-500">Geser untuk melihat</span>
+      </div>
+
+      <!-- Promo Cards Carousel -->
+      <div id="promoContainer" class="flex space-x-3 overflow-x-auto pb-2 hide-scrollbar snap-x snap-mandatory">
+        <!-- Rendered dynamically by JavaScript -->
+        <div
+          class="min-w-[280px] sm:min-w-[320px] bg-surface rounded-2xl overflow-hidden border border-stone-200/80 shadow-soft snap-center flex-shrink-0 animate-pulse p-4">
+          <div class="h-28 bg-stone-200 rounded-xl mb-3"></div>
+          <div class="h-4 bg-stone-200 rounded w-3/4 mb-2"></div>
+          <div class="h-3 bg-stone-200 rounded w-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE BUKU MENU DIGITAL (FORMAT PDF GOOGLE DRIVE) -->
+    <section id="menuSection"
+      class="bg-surface rounded-3xl p-5 sm:p-6 shadow-soft border border-stone-200/70 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-warm"></span>
+          <span
+            class="text-xs font-bold uppercase tracking-wider text-amber-dark bg-amber-light/80 px-2.5 py-0.5 rounded-full">Menu
+            Regullar</span>
+        </div>
+        <span class="text-[11px] text-stone-500 font-medium">Buku Menu Digital</span>
+      </div>
+
+      <div>
+        <h3 class="text-lg sm:text-xl font-extrabold text-stone-900 tracking-tight">Buku Menu & Daftar Harga Terkini
+        </h3>
+        <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+          Seluruh hidangan khas Nusantara (Sunda, Jawa dan Bali) terangkum lengkap dalam buku menu resmi kami.
+        </p>
+      </div>
+
+      <!-- PDF Showcase Card -->
+      <div class="p-4 rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50/40 border border-stone-200/90 space-y-4">
+        <!-- Visual Banner / Cover Slideshow (Auto-Slide seperti Banner Utama, Bebas Tulisan) -->
+        <div id="menuSliderContainer"
+          class="relative h-44 sm:h-52 w-full rounded-xl overflow-hidden bg-stone-900 shadow-sm border border-stone-200 select-none">
+          <div id="menuSlidesWrapper" class="w-full h-full relative">
+            <div id="menuSlide_0"
+              class="menu-slide absolute inset-0 w-full h-full opacity-100 z-1 transition-opacity duration-1000">
+              <img src="https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5"
+                alt="Buku Menu Rumah Air Bogor Resto" class="w-full h-full object-cover object-center">
+            </div>
+          </div>
+          <!-- Slider Dots Indicator (if > 1 image) -->
+          <div id="menuSliderDots"
+            class="absolute bottom-2.5 left-1/2 transform -translate-x-1/2 flex items-center space-x-1.5 z-20"></div>
+        </div>
+
+        <!-- Dual Action Buttons -->
+        <div class="space-y-2 pt-1">
+          <!-- Button 1: Buka PDF di Drive -->
+          <a id="btnBukaMenuPdf" href="#" target="_blank"
+            class="w-full py-3.5 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-bold text-xs sm:text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+            <span>Buka Buku Menu PDF (Google Drive)</span>
+            <svg class="w-3.5 h-3.5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+
+          <!-- Button 2: Pratinjau Modal di Halaman Ini -->
+          <button type="button" onclick="openPdfPreviewModal()"
+            class="w-full py-2.5 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-xs flex items-center justify-center space-x-1.5 transition-colors">
+            <svg class="w-4 h-4 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+              </path>
+            </svg>
+            <span>Pratinjau Cepat di Sini</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULIR RESERVASI MEJA / SAUNG (SMART BOOKING BRIDGE) -->
+    <section id="reservasiSection"
+      class="bg-gradient-to-br from-brand-deep to-brand-deeper text-white rounded-3xl p-5 sm:p-6 shadow-floating space-y-4">
+      <div>
+        <div
+          class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-amber-warm text-[11px] font-bold mb-2">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>Konfirmasi Instan ke WhatsApp</span>
+        </div>
+        <h3 class="text-xl font-extrabold tracking-tight">Formulir Reservasi Meja / Saung</h3>
+        <p class="text-xs text-stone-200 mt-1 leading-relaxed">
+          Amankan saung apung atas danau Anda lebih awal untuk keluarga atau rombongan. Data Anda tercatat otomatis dan
+          draf pesan akan langsung terusan ke WhatsApp resto.
+        </p>
+      </div>
+
+      <form id="bookingForm" onsubmit="event.preventDefault(); handleBookingSubmit();" class="space-y-3.5">
+        <!-- Nama Pemesan -->
+        <div>
+          <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Nama Lengkap
+            Pemesan *</label>
+          <input type="text" id="inputNama" required placeholder="Contoh: Bpk. Bambang Wijaya"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+        </div>
+
+        <!-- Nomor WhatsApp -->
+        <div>
+          <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Nomor WhatsApp
+            Aktif *</label>
+          <input type="tel" id="inputWA" required placeholder="Contoh: 081234567890"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+        </div>
+
+        <!-- Tanggal & Jam (Grid 2 Kolom) -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Tanggal
+              Kunjungan *</label>
+            <input type="date" id="inputTanggal" required
+              class="w-full px-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Jam Kedatangan
+              *</label>
+            <select id="inputJam" required
+              class="w-full px-3 py-2.5 rounded-xl bg-stone-900 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+              <option value="11:00">11:00 WIB (Makan Siang)</option>
+              <option value="12:00" selected>12:00 WIB (Makan Siang)</option>
+              <option value="13:00">13:00 WIB (Makan Siang)</option>
+              <option value="14:00">14:00 WIB</option>
+              <option value="16:00">16:00 WIB (Sore Danau)</option>
+              <option value="17:00">17:00 WIB (Sore Danau)</option>
+              <option value="18:30">18:30 WIB (Makan Malam)</option>
+              <option value="19:30">19:30 WIB (Makan Malam)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Jumlah Pax & Pilihan Area -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Jumlah Tamu
+              (Pax) *</label>
+            <input type="number" id="inputPax" min="1" max="500" value="4" required
+              class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Pilihan Area
+              Saung *</label>
+            <select id="inputArea"
+              class="w-full px-3 py-2.5 rounded-xl bg-stone-900 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+              <option value="Saung Apung Atas Danau (Favorit)">Saung Apung Atas Danau</option>
+              <option value="Gazebo Utama Tepi Danau">Gazebo Utama Danau</option>
+              <option value="Area Ruang Acara / VIP AC">Ruang Acara / VIP AC</option>
+              <option value="Meja Santai Dekat Playground">Dekat Playground Anak</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Catatan Khusus -->
+        <div>
+          <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Permintaan Khusus
+            (Opsional)</label>
+          <textarea id="inputCatatan" rows="2"
+            placeholder="Contoh: Butuh kursi bayi, acara ulang tahun keluarga, atau request saung ..."
+            class="w-full px-3.5 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all"></textarea>
+        </div>
+
+        <!-- Submit Button with Anti-Deadlock State -->
+        <button type="submit" id="btnSubmitBooking"
+          class="w-full py-3.5 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-bold text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8">
+            </path>
+          </svg>
+          <span id="btnSubmitText">Kirim Reservasi ke WhatsApp Resto</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- OPERASIONAL, LOKASI & PETA GOOGLE MAPS -->
+    <section class="bg-surface rounded-3xl p-5 shadow-soft border border-stone-200/70 space-y-4">
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3 class="text-base font-bold text-stone-900">Jam Operasional & Lokasi Resto</h3>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1.5">
+          <span class="font-bold text-stone-800">Waktu Pelayanan:</span>
+          <div class="flex justify-between text-stone-600">
+            <span>Senin - Jumat</span>
+            <span class="font-semibold text-emerald-700">10:00 - 21:00 WIB</span>
+          </div>
+          <div class="flex justify-between text-stone-600">
+            <span>Sabtu - Minggu / Libur</span>
+            <span class="font-semibold text-emerald-700">09:30 - 21:30 WIB</span>
+          </div>
+          <p class="text-[11px] text-stone-500 pt-1 border-t border-stone-200">
+            *Dapur tutup (last order) 45 menit sebelum jam operasional berakhir.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1.5">
+          <span class="font-bold text-stone-800">Alamat Lengkap:</span>
+          <p class="text-stone-600 leading-relaxed">
+            Jl. Raya Boulevard CBD Bogor Nirwana Residence, Mulyaharja, Kec. Bogor Selatan, Kota Bogor, Jawa Barat
+            16132.
+          </p>
+          <a href="https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence" target="_blank"
+            class="inline-flex items-center space-x-1 text-emerald-700 font-semibold hover:underline text-[11px]">
+            <span>Buka di Google Maps Navigasi</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Maps Embed Container -->
+      <div class="w-full h-48 sm:h-56 rounded-2xl overflow-hidden border border-stone-200 relative bg-stone-100">
+        <iframe title="Peta Lokasi Rumah Air Bogor Resto"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0818296245133!2d106.7904085!3d-6.6367507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5e3d7454f7f%3A0xb36ef3eb13997db8!2sRumah%20Air%20Bogor!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- MEDIA SOSIAL & TAUTAN KILAT -->
+    <section class="bg-surface rounded-3xl p-5 shadow-soft border border-stone-200/70 text-center space-y-3">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-stone-500">Ikuti & Temukan Kami</h3>
+      <div class="flex items-center justify-center space-x-3">
+        <!-- Instagram -->
+        <a id="linkInstagram" href="https://instagram.com/rumahairbogor" target="_blank"
+          class="w-11 h-11 rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-all hover:scale-110">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a id="linkTikTok" href="https://tiktok.com/@rumahairbogor" target="_blank"
+          class="w-11 h-11 rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-all hover:scale-110">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+          </svg>
+        </a>
+
+        <!-- Call / Phone -->
+        <a id="linkTelepon" href="tel:081111861853"
+          class="w-11 h-11 rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition-all hover:scale-110">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+            </path>
+          </svg>
+        </a>
+      </div>
+      <p class="text-[11px] text-stone-500 pt-1">
+        Bagikan halaman ini kepada keluarga atau rekan kerja untuk rencana makan bersama.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface border-t border-stone-200/80 py-6 text-center text-xs text-stone-500">
+    <div class="max-w-2xl mx-auto px-4 space-y-1.5">
+      <p class="font-bold text-stone-800">Rumah Air Bogor Resto &copy; 2026</p>
+      <p class="text-[11px] text-stone-500">Indonesian Culinary Heritage • Bogor Nirwana Residence</p>
+      <p class="text-[10px] text-stone-400 pt-2">Sistem Digital & Web Hub ini dibuat oleh Rumah Air</p>
+    </div>
+  </footer>
+
+  <!-- MODAL SUKSES RESERVASI -->
+  <div id="modalSukses"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-surface rounded-3xl max-w-sm w-full p-6 text-center shadow-floating border border-stone-100 transform scale-95 transition-transform duration-300">
+      <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-extrabold text-stone-900">Reservasi Dicatat!</h3>
+      <p class="text-xs text-stone-600 mt-1">
+        Nomor reservasi Anda: <span id="modalNoReservasi"
+          class="font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">RAB-202611-001</span>
+      </p>
+      <p class="text-xs text-stone-500 mt-2 leading-relaxed">
+        Silakan klik tombol di bawah untuk melanjutkan ke WhatsApp resto dan konfirmasi saung Anda sekarang.
+      </p>
+
+      <div class="mt-5 space-y-2">
+        <a id="modalBtnWA" href="#" target="_blank"
+          class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center space-x-1.5 shadow-sm transition-all">
+          <span>Buka WhatsApp Sekarang</span>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.297.144.35.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z" />
+          </svg>
+        </a>
+        <button onclick="closeModal()"
+          class="w-full py-2.5 px-4 rounded-xl text-stone-600 hover:bg-stone-100 text-xs font-semibold transition-all">
+          Tutup Layar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PREVIEW BUKU MENU PDF (GOOGLE DRIVE) -->
+  <div id="modalPdfViewer"
+    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/75 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-surface rounded-3xl max-w-2xl w-full h-[85vh] flex flex-col overflow-hidden shadow-floating border border-stone-200 transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="px-4 py-3 bg-stone-50 border-b border-stone-200 flex items-center justify-between shrink-0">
+        <div class="flex items-center space-x-2">
+          <div class="w-7 h-7 rounded-lg bg-amber-warm text-white flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h4 id="pdfModalTitle" class="text-xs font-bold text-stone-900 leading-tight">Pratinjau Buku Menu</h4>
+            <p id="pdfModalSubtitle" class="text-[10px] text-stone-500">Rumah Air Bogor Resto</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <a id="modalPdfExternalLink" href="#" target="_blank"
+            class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 text-[11px] font-semibold border border-amber-200 flex items-center space-x-1">
+            <span>Buka di Drive</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+          <button onclick="closePdfPreviewModal()"
+            class="w-7 h-7 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Iframe Container -->
+      <div class="flex-grow w-full h-full bg-stone-100 relative">
+        <iframe id="pdfPreviewIframe" src="" class="w-full h-full border-0" allow="autoplay">
+        </iframe>
+        <div id="pdfLoadingNotice"
+          class="absolute inset-0 flex flex-col items-center justify-center bg-stone-50 text-stone-500 text-xs space-y-2 pointer-events-none">
+          <div class="w-6 h-6 border-2 border-amber-warm border-t-transparent rounded-full animate-spin"></div>
+          <span>Memuat berkas PDF dari Google Drive...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PILIHAN BUFFET PACKAGE (EVENT vs WEDDING) -->
+  <div id="modalBuffetPackage"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-surface rounded-3xl max-w-md w-full overflow-hidden shadow-floating border border-stone-200 p-5 space-y-4 transform scale-95 transition-transform duration-300">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-amber-warm text-white flex items-center justify-center shadow-xs">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-stone-900 leading-tight">Pilihan Buffet Package</h3>
+            <p class="text-[11px] text-stone-500">Prasmanan Spesial Rumah Air Bogor Resto</p>
+          </div>
+        </div>
+        <button onclick="closeBuffetModal()"
+          class="w-7 h-7 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- 2 Paket Cards -->
+      <div class="space-y-3">
+        <!-- Paket 1: Event & Celebration -->
+        <div
+          class="p-3.5 rounded-2xl bg-gradient-to-br from-amber-50/70 to-stone-50 border border-amber-200/90 hover:border-amber-400 transition-all">
+          <div class="flex items-center space-x-2 mb-1">
+            <span
+              class="px-2 py-0.5 rounded bg-amber-warm text-white font-bold text-[9px] uppercase tracking-wide">Pilihan
+              1</span>
+            <h4 class="text-xs font-bold text-stone-900">Event & Celebration Package</h4>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed mb-3">
+            Paket prasmanan gathering keluarga, perayaan ulang tahun, reuni, dan arisan.
+          </p>
+          <div class="flex items-center space-x-2">
+            <button type="button" onclick="previewEventPdf()"
+              class="flex-1 py-1.5 px-3 rounded-xl bg-amber-warm hover:bg-amber-dark text-white text-xs font-semibold shadow-xs flex items-center justify-center space-x-1.5 transition-all active:scale-95">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+              <span>Lihat PDF</span>
+            </button>
+            <a id="btnDriveEvent" href="#" target="_blank"
+              class="py-1.5 px-3 rounded-xl bg-white hover:bg-stone-100 text-stone-700 text-xs font-medium border border-stone-200 flex items-center space-x-1">
+              <span>Drive</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paket 2: Wedding Package -->
+        <div
+          class="p-3.5 rounded-2xl bg-gradient-to-br from-emerald-50/70 to-stone-50 border border-emerald-200/90 hover:border-emerald-400 transition-all">
+          <div class="flex items-center space-x-2 mb-1">
+            <span
+              class="px-2 py-0.5 rounded bg-emerald-700 text-white font-bold text-[9px] uppercase tracking-wide">Pilihan
+              2</span>
+            <h4 class="text-xs font-bold text-stone-900">Wedding Package</h4>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed mb-3">
+            Paket pernikahan bernuansa alam, saung, danau dan persawahan.
+          </p>
+          <div class="flex items-center space-x-2">
+            <button type="button" onclick="previewWeddingPdf()"
+              class="flex-1 py-1.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-xs flex items-center justify-center space-x-1.5 transition-all active:scale-95">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+              <span>Lihat PDF</span>
+            </button>
+            <a id="btnDriveWedding" href="#" target="_blank"
+              class="py-1.5 px-3 rounded-xl bg-white hover:bg-stone-100 text-stone-700 text-xs font-medium border border-stone-200 flex items-center space-x-1">
+              <span>Drive</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Konsultasi WA -->
+      <a id="btnWABuffet" href="#" target="_blank"
+        class="w-full py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold flex items-center justify-center space-x-1.5 border border-stone-200 transition-colors">
+        <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.297.144.35.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z" />
+        </svg>
+        <span>Konsultasi Buffet via WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL GALERI RESTO RUMAH AIR BOGOR (FULL-IMAGE SLIDESHOW) -->
+  <div id="modalGalleryViewer"
+    class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-5 bg-stone-950/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div
+      class="bg-stone-900 rounded-3xl max-w-2xl w-full h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden shadow-floating border border-stone-800 transform scale-95 transition-transform duration-300 relative">
+      <!-- Modal Header -->
+      <div
+        class="px-4 py-3 bg-stone-900/95 text-white border-b border-stone-800 flex items-center justify-between shrink-0 z-20">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-7 h-7 rounded-lg bg-sky-600 text-white flex items-center justify-center shadow-xs">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white leading-tight">Galeri Foto Rumah Air Bogor</h4>
+            <p id="galleryCounter" class="text-[10px] text-sky-400 font-medium">Foto 1 dari 1</p>
+          </div>
+        </div>
+        <button onclick="closeGalleryModal()"
+          class="w-8 h-8 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Main Slide Viewport (Full Image & Video Player + Touch Swipe) -->
+      <div id="gallerySlideArea"
+        class="flex-grow w-full relative bg-stone-950 overflow-hidden flex items-center justify-center select-none">
+        <!-- Main Active Image -->
+        <img id="galleryMainImg" src="" alt="Galeri Rumah Air Bogor"
+          class="w-full h-full object-contain transition-opacity duration-300">
+
+        <!-- Embedded Video Player (Google Drive / YouTube) -->
+        <iframe id="galleryVideoIframe" src="" class="w-full h-full border-0 hidden"
+          allow="autoplay; fullscreen; picture-in-picture">
+        </iframe>
+
+        <!-- Direct HTML5 Video Player (.mp4, .webm) -->
+        <video id="galleryHtmlVideo" controls playsinline class="w-full h-full object-contain hidden">
+        </video>
+
+        <!-- Navigation Arrow: Left -->
+        <button id="galleryBtnPrev" type="button" onclick="prevGallerySlide(event)"
+          class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-stone-900 text-white backdrop-blur-md flex items-center justify-center shadow-lg border border-white/20 transition-all active:scale-90 z-20 cursor-pointer"
+          aria-label="Foto Sebelumnya">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Navigation Arrow: Right -->
+        <button id="galleryBtnNext" type="button" onclick="nextGallerySlide(event)"
+          class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-stone-900 text-white backdrop-blur-md flex items-center justify-center shadow-lg border border-white/20 transition-all active:scale-90 z-20 cursor-pointer"
+          aria-label="Foto Berikutnya">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Bottom Caption Overlay -->
+        <div
+          class="absolute bottom-0 inset-x-0 p-3 sm:p-4 bg-gradient-to-t from-stone-950 via-stone-950/85 to-transparent z-10 pointer-events-none">
+          <p id="galleryPhotoTitle" class="text-xs sm:text-sm font-bold text-white drop-shadow-md truncate"></p>
+          <p id="galleryPhotoSub" class="text-[10px] text-stone-400 mt-0.5">Geser layar atau ketuk panah untuk melihat
+            foto lainnya</p>
+        </div>
+      </div>
+
+      <!-- Thumbnail Quick-Jump Strip at Bottom -->
+      <div id="galleryThumbStrip"
+        class="px-3 py-2 bg-stone-900/95 border-t border-stone-800 flex space-x-2 overflow-x-auto hide-scrollbar shrink-0 z-20">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification"
+    class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50 bg-stone-900 text-white text-xs px-4 py-2.5 rounded-full shadow-card flex items-center space-x-2 pointer-events-none transition-all duration-300 opacity-0 translate-y-2">
+    <span id="toastIcon">ℹ️</span>
+    <span id="toastMessage">Pemberitahuan</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & STATE MANAGEMENT -->
+  <script>
+    // CLIENT-SIDE IN-MEMORY STATE (0 Detik Loading Berulang)
+    const APP_STATE = {
+      profile: {
+        NamaResto: 'Rumah Air Bogor Resto',
+        Tagline: 'Indonesian Culinary Heritage',
+        NoWhatsApp: '081111861853',
+        NoWhatsAppIntl: '6281111861853',
+        Alamat: 'Jl. Raya Boulevard CBD Bogor Nirwana Residence, Kota Bogor, Jawa Barat 16132',
+        JamOperasional: '10:00 - 21:00 WIB (Buka Setiap Hari)',
+        LogoURL: 'https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-',
+        HeroImages: ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'],
+        HeroImageURL: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5',
+        LinkInstagram: 'https://instagram.com/rumahairbogor',
+        LinkTikTok: 'https://tiktok.com/@rumahairbogor',
+        LinkMaps: 'https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence',
+        LinkMenuPDF: 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing',
+        LinkPdfEventCelebration: 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing',
+        LinkPdfWedding: 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing',
+        LinkPdfMeeting: 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing',
+        FotoGaleriResto: 'https://drive.google.com/file/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5/view?usp=drive_link',
+        FotoGaleri: ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'],
+        VideoGaleriResto: '',
+        VideoGaleri: []
+      },
+      bannerMenu: ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'],
+      galeri: [
+        {
+          id: 'GL-001',
+          judul: 'Saung Utama & Danau Nirwana',
+          url: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5',
+          rawUrl: 'https://drive.google.com/file/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5/view?usp=drive_link',
+          tipe: 'Foto'
+        }
+      ],
+      menu: [
+        { id: 'MNU-001', kategori: 'Ikan & Seafood', nama: 'Gurame Bakar Cobek Khas RAB', deskripsi: 'Gurame segar bakar bumbu cobek khas Sunda dengan sambal jahe pedas gurih meresap sempurna', hargaFormatted: 'Rp 85.000', hargaRaw: 85000, foto: 'https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?w=600&q=80', status: 'Tersedia', badge: 'Best Seller' },
+        { id: 'MNU-002', kategori: 'Ikan & Seafood', nama: 'Gurame Terbang Renyah', deskripsi: 'Gurame goreng renyah mekar dengan cocolan sambal terasi dadak dan lalapan segar kebun', hargaFormatted: 'Rp 82.000', hargaRaw: 82000, foto: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80', status: 'Tersedia', badge: 'Favorit' },
+        { id: 'MNU-003', kategori: 'Makanan Khas', nama: 'Nasi Timbel Komplit Ayam Bakar', deskripsi: 'Nasi bungkus daun pisang, ayam bakar rempah, tahu, tempe bacem, sayur asem, sambal & lalapan', hargaFormatted: 'Rp 48.000', hargaRaw: 48000, foto: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&q=80', status: 'Tersedia', badge: 'Best Seller' },
+        { id: 'MNU-004', kategori: 'Makanan Khas', nama: 'Sop Buntut Spesial Kuah Bening', deskripsi: 'Buntut sapi empuk pilihan dengan kuah kaldu rempah gurih hangat, wortel & taburan emping', hargaFormatted: 'Rp 78.000', hargaRaw: 78000, foto: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80', status: 'Tersedia', badge: 'Rekomendasi' },
+        { id: 'MNU-005', kategori: 'Makanan Khas', nama: 'Ayam Goreng Lengkuas Saung Danau', deskripsi: 'Ayam kampung goreng empuk bertabur serundeng lengkuas harum gurih khas Parahyangan', hargaFormatted: 'Rp 38.000', hargaRaw: 38000, foto: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80', status: 'Tersedia', badge: '' },
+        { id: 'MNU-006', kategori: 'Sayur & Sambal', nama: 'Karedok Sayur Segar Saus Kacang', deskripsi: 'Sayuran mentah segar renyah dipadu siraman bumbu kacang kencur khas Sunda yang gurih wangi', hargaFormatted: 'Rp 22.000', hargaRaw: 22000, foto: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80', status: 'Tersedia', badge: 'Favorit' },
+        { id: 'MNU-007', kategori: 'Sayur & Sambal', nama: 'Sayur Asem Gurih Segar', deskripsi: 'Sayur asem kuah bening asam manis segar dengan melinjo, jagung manis, labu siam & kacang panjang', hargaFormatted: 'Rp 18.000', hargaRaw: 18000, foto: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80', status: 'Tersedia', badge: '' },
+        { id: 'MNU-008', kategori: 'Sayur & Sambal', nama: 'Sambal Dadak Cobek & Lalapan', deskripsi: 'Ulekan cabai rawit merah, terasi bakar dan tomat segar disajikan langsung di cobek tanah liat', hargaFormatted: 'Rp 12.000', hargaRaw: 12000, foto: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&q=80', status: 'Tersedia', badge: '' },
+        { id: 'MNU-009', kategori: 'Minuman', nama: 'Es Kelapa Muda Jeruk Batok', deskripsi: 'Air kelapa muda murni dalam batok utuh dengan perasan jeruk nipis segar & gula aren alami', hargaFormatted: 'Rp 28.000', hargaRaw: 28000, foto: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=80', status: 'Tersedia', badge: 'Best Seller' },
+        { id: 'MNU-010', kategori: 'Minuman', nama: 'Es Cincau Hijau Santan Pandan', deskripsi: 'Cincau hijau alami daun camcao dengan santan gurih segar dan sirup gula kelapa wangi pandan', hargaFormatted: 'Rp 20.000', hargaRaw: 20000, foto: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80', status: 'Tersedia', badge: 'Favorit' },
+        { id: 'MNU-011', kategori: 'Minuman', nama: 'Wedang Jahe Rempah Hangat', deskripsi: 'Minuman seduhan jahe merah bakar, serai, cengkeh dan gula batu alami penghangat suasana', hargaFormatted: 'Rp 18.000', hargaRaw: 18000, foto: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80', status: 'Tersedia', badge: '' },
+        { id: 'MNU-012', kategori: 'Paket Rombongan', nama: 'Paket Botram Saung Danau (4-5 Pax)', deskripsi: '1 Gurame Bakar Cobek, 4 Nasi Timbel, 1 Porsi Ayam Lengkuas, 1 Sayur Asem, Karedok, Sambal Lalap & 4 Es Kelapa', hargaFormatted: 'Rp 295.000', hargaRaw: 295000, foto: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80', status: 'Tersedia', badge: 'Paling Hemat' },
+        { id: 'MNU-013', kategori: 'Paket Rombongan', nama: 'Paket Wisata Keluarga Besar (8-10 Pax)', deskripsi: '2 Gurame Bakar/Goreng, 8 Nasi Liwet Kastrol, 2 Porsi Ayam Bakar, Cumi Saus Padang, Tumis Kangkung, Sayur Asem & Minuman', hargaFormatted: 'Rp 580.000', hargaRaw: 580000, foto: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80', status: 'Tersedia', badge: 'Rekomendasi' }
+      ],
+      promo: [],
+      selectedCategory: 'Semua',
+      searchKeyword: ''
+    };
+
+    // Inisialisasi Aplikasi Saat DOM Selesai Dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set default input tanggal ke hari ini
+      var today = new Date().toISOString().split('T')[0];
+      document.getElementById('inputTanggal').value = today;
+      document.getElementById('inputTanggal').min = today;
+
+      // Render awal menggunakan in-memory state (Seketika / 0 Detik)
+      renderAppUI();
+
+      // Panggil backend Google Apps Script secara asinkron (Safe Preview Mode)
+      loadDataFromBackend();
+
+      // Pasang event listener untuk search bar (jika ada)
+      var searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', function (e) {
+          APP_STATE.searchKeyword = e.target.value.toLowerCase().trim();
+          renderMenuCards();
+        });
+      }
+    });
+
+    /**
+     * Memanggil backend Google Apps Script secara aman
+     */
+    function loadDataFromBackend() {
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        google.script.run
+          .withSuccessHandler(function (response) {
+            if (response && response.success) {
+              if (response.profile) APP_STATE.profile = response.profile;
+              if (response.bannerMenu && response.bannerMenu.length > 0) APP_STATE.bannerMenu = response.bannerMenu;
+              if (response.galeri && response.galeri.length > 0) APP_STATE.galeri = response.galeri;
+              if (response.menu && response.menu.length > 0) APP_STATE.menu = response.menu;
+              if (response.promo && Array.isArray(response.promo)) APP_STATE.promo = response.promo;
+              renderAppUI();
+              showToast('Data restoran berhasil disinkronkan', 'success');
+            }
+          })
+          .withFailureHandler(function (error) {
+            console.warn('Gagal memuat dari Apps Script, menggunakan cache lokal:', error);
+          })
+          .getAppInitialData();
+      }
+    }
+
+    /**
+     * Render Seluruh Antarmuka
+     */
+    function renderAppUI() {
+      renderProfileUI();
+      renderMenuBannerSlider();
+      renderPromoCarousel();
+      if (document.getElementById('categoryPills')) renderCategoryPills();
+      if (document.getElementById('menuCardsContainer')) renderMenuCards();
+    }
+
+    /**
+     * Render Profil & Informasi Kontak
+     */
+    function renderProfileUI() {
+      var p = APP_STATE.profile;
+      document.getElementById('restoTitle').textContent = p.NamaResto || 'Rumah Air Bogor Resto';
+      document.getElementById('restoTagline').textContent = p.Tagline || '';
+      document.getElementById('restoAlamatText').textContent = p.Alamat || 'Bogor Nirwana Residence';
+
+      // Render Hero Slider Multi-Gambar & Eliminasi Kedipan Foto Lama
+      var sliderImages = [];
+      if (p.HeroImages && Array.isArray(p.HeroImages) && p.HeroImages.length > 0) {
+        sliderImages = p.HeroImages;
+      } else if (p.HeroImageURL) {
+        var splitHero = p.HeroImageURL.split(/[\n,]+/);
+        for (var s = 0; s < splitHero.length; s++) {
+          var trimmed = splitHero[s].trim();
+          if (trimmed) sliderImages.push(formatDirectImageUrl(trimmed));
+        }
+      }
+
+      // Filter Cerdas Anti-Demo: Jika ada minimal 1 foto asli buatan pengguna,
+      // singkirkan seluruh foto demo Unsplash agar TIDAK ikut berputar di slider!
+      var nonDemoImages = [];
+      for (var u = 0; u < sliderImages.length; u++) {
+        if (sliderImages[u] && sliderImages[u].indexOf('images.unsplash.com') === -1) {
+          nonDemoImages.push(sliderImages[u]);
+        }
+      }
+
+      if (nonDemoImages.length > 0) {
+        sliderImages = nonDemoImages; // Hanya gunakan foto asli pengguna!
+      } else if (sliderImages.length === 0 && (!window.google || !google.script)) {
+        // Fallback hanya untuk preview offline lokal jika sama sekali belum ada data
+        sliderImages = ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'];
+      }
+
+      if (sliderImages.length > 0) {
+        initHeroSlider(sliderImages);
+      }
+
+      // Render Logo Resto dengan Auto-Converter Google Drive
+      if (p.LogoURL) {
+        var directLogo = formatDirectImageUrl(p.LogoURL);
+        var logoEl = document.getElementById('restoLogoImg');
+        if (logoEl && directLogo) logoEl.src = directLogo;
+
+        var topLogoEl = document.getElementById('topBarLogoImg');
+        if (topLogoEl && directLogo) topLogoEl.src = directLogo;
+      }
+
+      // Link Kontak & Navigasi
+      var waNumber = p.NoWhatsAppIntl || '6281111861853';
+      var defaultWAMsg = encodeURIComponent('Halo Admin Rumah Air Bogor Resto, saya ingin tanya informasi resto dan ketersediaan saung.');
+      var waLink = 'https://api.whatsapp.com/send?phone=' + waNumber + '&text=' + defaultWAMsg;
+
+      document.getElementById('btnDirectWA').href = waLink;
+      if (p.LinkMaps) {
+        document.getElementById('btnDirectMaps').href = p.LinkMaps;
+        document.getElementById('linkAlamat').href = p.LinkMaps;
+      }
+      if (p.LinkInstagram) document.getElementById('linkInstagram').href = p.LinkInstagram;
+      if (p.LinkTikTok) document.getElementById('linkTikTok').href = p.LinkTikTok;
+      if (p.NoWhatsApp) document.getElementById('linkTelepon').href = 'tel:' + p.NoWhatsApp;
+
+      // Tautan Buku Menu PDF (Google Drive)
+      var menuPdfLink = p.LinkMenuPDF || 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing';
+      if (document.getElementById('btnDirectMenu')) {
+        document.getElementById('btnDirectMenu').href = menuPdfLink;
+      }
+      if (document.getElementById('btnBukaMenuPdf')) {
+        document.getElementById('btnBukaMenuPdf').href = menuPdfLink;
+      }
+      if (document.getElementById('modalPdfExternalLink')) {
+        document.getElementById('modalPdfExternalLink').href = menuPdfLink;
+      }
+      if (document.getElementById('btnDriveEvent')) {
+        document.getElementById('btnDriveEvent').href = p.LinkPdfEventCelebration || menuPdfLink;
+      }
+      if (document.getElementById('btnDriveWedding')) {
+        document.getElementById('btnDriveWedding').href = p.LinkPdfWedding || menuPdfLink;
+      }
+    }
+
+    /**
+     * CONTROLLER HERO SLIDESHOW OTOMATIS
+     */
+    var HERO_SLIDER = {
+      images: [],
+      currentIndex: 0,
+      timer: null,
+      intervalMs: 4000
+    };
+
+    function initHeroSlider(images) {
+      if (!images || images.length === 0) return;
+      HERO_SLIDER.images = images;
+      HERO_SLIDER.currentIndex = 0;
+
+      var wrapper = document.getElementById('heroSlidesWrapper');
+      var dotsContainer = document.getElementById('heroSliderDots');
+      var skeleton = document.getElementById('heroSliderSkeleton');
+
+      if (!wrapper) return;
+      wrapper.innerHTML = '';
+      if (dotsContainer) dotsContainer.innerHTML = '';
+
+      // Buat elemen slide untuk setiap gambar
+      images.forEach(function (imgUrl, idx) {
+        var slide = document.createElement('div');
+        slide.className = 'hero-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ' +
+          (idx === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0');
+        slide.id = 'heroSlide_' + idx;
+
+        var img = document.createElement('img');
+        img.src = formatDirectImageUrl(imgUrl);
+        img.alt = 'Suasana Rumah Air Bogor Resto ' + (idx + 1);
+        img.className = 'w-full h-full object-cover object-center transform transition-transform duration-[6000ms] ease-out ' +
+          (idx === 0 ? 'scale-105' : 'scale-100');
+        img.onerror = function () {
+          this.onerror = null;
+          // Jangan tampilkan foto demo! Sembunyikan slide jika foto gagal
+          if (images.length > 1) {
+            slide.style.display = 'none';
+          }
+        };
+        img.onload = function () {
+          // Begitu ada foto yang berhasil dimuat, hilangkan shimmer skeleton
+          if (skeleton) {
+            skeleton.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(function () { skeleton.style.display = 'none'; }, 700);
+          }
+        };
+
+        slide.appendChild(img);
+        wrapper.appendChild(slide);
+
+        // Buat indikator dot jika foto lebih dari 1
+        if (images.length > 1 && dotsContainer) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', 'Lihat foto ' + (idx + 1));
+          dot.className = 'w-2 h-2 rounded-full transition-all duration-300 ' +
+            (idx === 0 ? 'bg-amber-warm w-5 ring-1 ring-white/50' : 'bg-white/60 hover:bg-white');
+          dot.onclick = function () { goToHeroSlide(idx); };
+          dotsContainer.appendChild(dot);
+        }
+      });
+
+      // Mulai auto-slide jika foto lebih dari 1
+      if (HERO_SLIDER.timer) clearInterval(HERO_SLIDER.timer);
+      if (images.length > 1) {
+        HERO_SLIDER.timer = setInterval(nextHeroSlide, HERO_SLIDER.intervalMs);
+      }
+    }
+
+    function goToHeroSlide(newIndex) {
+      if (!HERO_SLIDER.images || HERO_SLIDER.images.length <= 1) return;
+      var total = HERO_SLIDER.images.length;
+      var prevIndex = HERO_SLIDER.currentIndex;
+      HERO_SLIDER.currentIndex = (newIndex + total) % total;
+
+      var prevSlide = document.getElementById('heroSlide_' + prevIndex);
+      var nextSlide = document.getElementById('heroSlide_' + HERO_SLIDER.currentIndex);
+      var dots = document.getElementById('heroSliderDots') ? document.getElementById('heroSliderDots').children : [];
+
+      if (prevSlide) {
+        prevSlide.className = 'hero-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0';
+        var prevImg = prevSlide.querySelector('img');
+        if (prevImg) prevImg.classList.remove('scale-105');
+      }
+
+      if (nextSlide) {
+        nextSlide.className = 'hero-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-1';
+        var nextImg = nextSlide.querySelector('img');
+        if (nextImg) nextImg.classList.add('scale-105');
+      }
+
+      // Perbarui tampilan dot aktif
+      for (var d = 0; d < dots.length; d++) {
+        if (d === HERO_SLIDER.currentIndex) {
+          dots[d].className = 'w-5 h-2 rounded-full bg-amber-warm transition-all duration-300 ring-1 ring-white/50';
+        } else {
+          dots[d].className = 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300';
+        }
+      }
+    }
+
+    function nextHeroSlide() {
+      goToHeroSlide(HERO_SLIDER.currentIndex + 1);
+    }
+
+    /**
+     * CONTROLLER MENU BANNER SLIDESHOW OTOMATIS (TAB BANNERMENU)
+     */
+    var MENU_SLIDER = {
+      images: [],
+      currentIndex: 0,
+      timer: null,
+      intervalMs: 4000
+    };
+
+    function renderMenuBannerSlider() {
+      var images = APP_STATE.bannerMenu || [];
+      if (!Array.isArray(images) || images.length === 0) {
+        images = ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'];
+      }
+      initMenuSlider(images);
+    }
+
+    function initMenuSlider(images) {
+      if (!images || images.length === 0) return;
+      MENU_SLIDER.images = images;
+      MENU_SLIDER.currentIndex = 0;
+
+      var wrapper = document.getElementById('menuSlidesWrapper');
+      var dotsContainer = document.getElementById('menuSliderDots');
+      if (!wrapper) return;
+
+      wrapper.innerHTML = '';
+      if (dotsContainer) dotsContainer.innerHTML = '';
+
+      images.forEach(function (imgUrl, idx) {
+        var slide = document.createElement('div');
+        slide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ' +
+          (idx === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0');
+        slide.id = 'menuSlide_' + idx;
+
+        var img = document.createElement('img');
+        img.src = formatDirectImageUrl(imgUrl);
+        img.alt = 'Buku Menu Rumah Air Bogor ' + (idx + 1);
+        img.className = 'w-full h-full object-cover object-center transform transition-transform duration-[6000ms] ease-out ' +
+          (idx === 0 ? 'scale-105' : 'scale-100');
+        img.onerror = function () {
+          this.onerror = null;
+          if (images.length > 1) slide.style.display = 'none';
+        };
+
+        slide.appendChild(img);
+        wrapper.appendChild(slide);
+
+        if (images.length > 1 && dotsContainer) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', 'Lihat banner menu ' + (idx + 1));
+          dot.className = 'w-2 h-2 rounded-full transition-all duration-300 ' +
+            (idx === 0 ? 'bg-amber-warm w-5 ring-1 ring-white/50' : 'bg-white/60 hover:bg-white');
+          dot.onclick = function () { goToMenuSlide(idx); };
+          dotsContainer.appendChild(dot);
+        }
+      });
+
+      if (MENU_SLIDER.timer) clearInterval(MENU_SLIDER.timer);
+      if (images.length > 1) {
+        MENU_SLIDER.timer = setInterval(nextMenuSlide, MENU_SLIDER.intervalMs);
+      }
+    }
+
+    function goToMenuSlide(newIndex) {
+      if (!MENU_SLIDER.images || MENU_SLIDER.images.length <= 1) return;
+      var total = MENU_SLIDER.images.length;
+      var prevIndex = MENU_SLIDER.currentIndex;
+      MENU_SLIDER.currentIndex = (newIndex + total) % total;
+
+      var prevSlide = document.getElementById('menuSlide_' + prevIndex);
+      var nextSlide = document.getElementById('menuSlide_' + MENU_SLIDER.currentIndex);
+      var dots = document.getElementById('menuSliderDots') ? document.getElementById('menuSliderDots').children : [];
+
+      if (prevSlide) {
+        prevSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0';
+        var prevImg = prevSlide.querySelector('img');
+        if (prevImg) prevImg.classList.remove('scale-105');
+      }
+
+      if (nextSlide) {
+        nextSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-1';
+        var nextImg = nextSlide.querySelector('img');
+        if (nextImg) nextImg.classList.add('scale-105');
+      }
+
+      for (var d = 0; d < dots.length; d++) {
+        if (d === MENU_SLIDER.currentIndex) {
+          dots[d].className = 'w-5 h-2 rounded-full bg-amber-warm transition-all duration-300 ring-1 ring-white/50';
+        } else {
+          dots[d].className = 'w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300';
+        }
+      }
+    }
+
+    function nextMenuSlide() {
+      goToMenuSlide(MENU_SLIDER.currentIndex + 1);
+    }
+
+    /**
+     * Buka Modal Pratinjau PDF (Multiguna: Menu, Event, Wedding, Meeting)
+     */
+    function openPdfPreviewModal(customUrl, customTitle, customSubtitle) {
+      var p = APP_STATE.profile || {};
+      var rawUrl = customUrl || p.LinkMenuPDF || 'https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing';
+      var previewUrl = convertDriveUrlToPreview(rawUrl);
+
+      var modal = document.getElementById('modalPdfViewer');
+      var iframe = document.getElementById('pdfPreviewIframe');
+      var notice = document.getElementById('pdfLoadingNotice');
+      var titleEl = document.getElementById('pdfModalTitle');
+      var subEl = document.getElementById('pdfModalSubtitle');
+      var extLink = document.getElementById('modalPdfExternalLink');
+
+      if (titleEl) titleEl.textContent = customTitle || 'Pratinjau Buku Menu';
+      if (subEl) subEl.textContent = customSubtitle || 'Rumah Air Bogor Resto';
+      if (extLink) extLink.href = rawUrl;
+
+      if (notice) notice.style.display = 'flex';
+      iframe.src = previewUrl;
+      iframe.onload = function () {
+        if (notice) notice.style.display = 'none';
+      };
+
+      modal.classList.remove('hidden');
+      setTimeout(function () {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+        modal.querySelector('div').classList.add('scale-100');
+      }, 20);
+    }
+
+    /**
+     * Tutup Modal Pratinjau PDF
+     */
+    function closePdfPreviewModal() {
+      var modal = document.getElementById('modalPdfViewer');
+      var iframe = document.getElementById('pdfPreviewIframe');
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.remove('scale-100');
+      modal.querySelector('div').classList.add('scale-95');
+      setTimeout(function () {
+        modal.classList.add('hidden');
+        iframe.src = '';
+      }, 300);
+    }
+
+    /**
+     * CONTROLLER MODAL BUFFET PACKAGE (EVENT & WEDDING)
+     */
+    function openBuffetModal() {
+      var modal = document.getElementById('modalBuffetPackage');
+      if (!modal) return;
+      var p = APP_STATE.profile || {};
+      var eventLink = p.LinkPdfEventCelebration || p.LinkMenuPDF || '#';
+      var weddingLink = p.LinkPdfWedding || p.LinkMenuPDF || '#';
+      if (document.getElementById('btnDriveEvent')) document.getElementById('btnDriveEvent').href = eventLink;
+      if (document.getElementById('btnDriveWedding')) document.getElementById('btnDriveWedding').href = weddingLink;
+
+      var waNumber = p.NoWhatsAppIntl || '6281111861853';
+      var waMsg = encodeURIComponent('Halo Admin Rumah Air Bogor Resto, saya ingin tanya informasi dan brosur Buffet Package (Event / Wedding).');
+      if (document.getElementById('btnWABuffet')) {
+        document.getElementById('btnWABuffet').href = 'https://api.whatsapp.com/send?phone=' + waNumber + '&text=' + waMsg;
+      }
+
+      modal.classList.remove('hidden');
+      setTimeout(function () {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+        modal.querySelector('div').classList.add('scale-100');
+      }, 20);
+    }
+
+    function closeBuffetModal() {
+      var modal = document.getElementById('modalBuffetPackage');
+      if (!modal) return;
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.remove('scale-100');
+      modal.querySelector('div').classList.add('scale-95');
+      setTimeout(function () { modal.classList.add('hidden'); }, 300);
+    }
+
+    function previewEventPdf() {
+      closeBuffetModal();
+      var p = APP_STATE.profile || {};
+      var url = p.LinkPdfEventCelebration || p.LinkMenuPDF;
+      openPdfPreviewModal(url, 'Event & Celebration Package', 'Paket Prasmanan Gathering & Ulang Tahun');
+    }
+
+    function previewWeddingPdf() {
+      closeBuffetModal();
+      var p = APP_STATE.profile || {};
+      var url = p.LinkPdfWedding || p.LinkMenuPDF;
+      openPdfPreviewModal(url, 'Wedding Package', 'Paket Pernikahan Saung Danau Parahyangan');
+    }
+
+    function openMeetingPdfModal() {
+      var p = APP_STATE.profile || {};
+      var url = p.LinkPdfMeeting || p.LinkMenuPDF;
+      openPdfPreviewModal(url, 'Meeting Package', 'Paket Rapat, Seminar & Corporate Gathering');
+    }
+
+    /**
+     * CONTROLLER MODAL GALERI RESTO RUMAH AIR BOGOR (HYBRID FOTO & VIDEO SLIDER)
+     */
+    var GALLERY_SLIDER = {
+      items: [],
+      currentIndex: 0,
+      touchStartX: 0,
+      touchEndX: 0
+    };
+
+    /**
+     * Deteksi Format Media (Foto, YouTube, Google Drive Video, Direct MP4/WebM)
+     */
+    function detectGalleryMediaType(url) {
+      if (!url) return 'image';
+      var u = url.toString().trim().toLowerCase();
+      if (u.indexOf('youtube.com') !== -1 || u.indexOf('youtu.be') !== -1) {
+        return 'youtube';
+      }
+      if (u.match(/\.(mp4|webm|mov|m4v|ogg)(\?.*)?$/i)) {
+        return 'direct_video';
+      }
+      if (u.indexOf('drive.google.com') !== -1 && (u.indexOf('#video') !== -1 || u.indexOf('type=video') !== -1)) {
+        return 'drive_video';
+      }
+      return 'image';
+    }
+
+    /**
+     * Helper Embed YouTube
+     */
+    function getYouTubeEmbedUrl(url) {
+      var match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+      return match ? ('https://www.youtube.com/embed/' + match[1] + '?autoplay=1&rel=0') : url;
+    }
+
+    /**
+     * Mengambil Koleksi Media Galeri (Foto & Video) dari Tab GaleriResto (100% Dinamis, NOL Unsplash)
+     */
+    function getGalleryItems() {
+      var rawList = [];
+      if (APP_STATE.galeri && Array.isArray(APP_STATE.galeri) && APP_STATE.galeri.length > 0) {
+        rawList = APP_STATE.galeri;
+      } else {
+        // Fallback default: 1 Foto Resmi Rumah Air Bogor (NOL Unsplash)
+        rawList = [
+          {
+            id: 'GL-001',
+            judul: 'Saung Utama & Danau Nirwana',
+            url: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5',
+            rawUrl: 'https://drive.google.com/file/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5/view?usp=drive_link',
+            tipe: 'Foto'
+          }
+        ];
+      }
+
+      var list = [];
+      rawList.forEach(function (item, idx) {
+        var rawUrl = item.rawUrl || item.url || '';
+        var directUrl = item.url ? formatDirectImageUrl(item.url) : formatDirectImageUrl(rawUrl);
+        var mediaType = detectGalleryMediaType(rawUrl || directUrl);
+        if (item.tipe && item.tipe.toLowerCase() === 'video') {
+          if (mediaType === 'image') mediaType = 'drive_video';
+        }
+        list.push({
+          id: item.id || ('GL-' + (idx + 1)),
+          url: directUrl,
+          rawUrl: rawUrl,
+          title: item.judul || 'Suasana Rumah Air Bogor',
+          type: mediaType
+        });
+      });
+
+      return list;
+    }
+
+    /**
+     * Buka Modal Galeri 1 Gambar Penuh / Video
+     */
+    function openGalleryModal(startIndex) {
+      var modal = document.getElementById('modalGalleryViewer');
+      if (!modal) return;
+
+      GALLERY_SLIDER.items = getGalleryItems();
+      GALLERY_SLIDER.currentIndex = (typeof startIndex === 'number' && startIndex >= 0 && startIndex < GALLERY_SLIDER.items.length) ? startIndex : 0;
+
+      renderGalleryThumbnails();
+      updateGallerySlideView();
+
+      modal.classList.remove('hidden');
+      setTimeout(function () {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+        modal.querySelector('div').classList.add('scale-100');
+      }, 20);
+
+      // Pasang Touch Swipe Listener (Usap Layar Kiri/Kanan di Ponsel)
+      var slideArea = document.getElementById('gallerySlideArea');
+      if (slideArea && !slideArea.dataset.swipeBound) {
+        slideArea.dataset.swipeBound = 'true';
+        slideArea.addEventListener('touchstart', function (e) {
+          if (e.touches && e.touches[0]) {
+            GALLERY_SLIDER.touchStartX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        slideArea.addEventListener('touchend', function (e) {
+          if (e.changedTouches && e.changedTouches[0]) {
+            GALLERY_SLIDER.touchEndX = e.changedTouches[0].clientX;
+            handleGallerySwipe();
+          }
+        }, { passive: true });
+      }
+    }
+
+    /**
+     * Tutup Modal Galeri & Hentikan Video
+     */
+    function closeGalleryModal() {
+      var modal = document.getElementById('modalGalleryViewer');
+      if (!modal) return;
+
+      // Hentikan pemutaran video agar suara tidak bocor di background
+      var videoIframe = document.getElementById('galleryVideoIframe');
+      var htmlVideo = document.getElementById('galleryHtmlVideo');
+      if (videoIframe) {
+        videoIframe.src = '';
+        videoIframe.classList.add('hidden');
+      }
+      if (htmlVideo) {
+        htmlVideo.pause();
+        htmlVideo.src = '';
+        htmlVideo.classList.add('hidden');
+      }
+
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.remove('scale-100');
+      modal.querySelector('div').classList.add('scale-95');
+      setTimeout(function () { modal.classList.add('hidden'); }, 300);
+    }
+
+    /**
+     * Render Tampilan Media Slide Aktif (Foto / Video)
+     */
+    function updateGallerySlideView() {
+      var items = GALLERY_SLIDER.items;
+      if (!items || items.length === 0) return;
+      var cur = items[GALLERY_SLIDER.currentIndex];
+
+      var mainImg = document.getElementById('galleryMainImg');
+      var videoIframe = document.getElementById('galleryVideoIframe');
+      var htmlVideo = document.getElementById('galleryHtmlVideo');
+      var counterEl = document.getElementById('galleryCounter');
+      var titleEl = document.getElementById('galleryPhotoTitle');
+
+      // Reset elemen media sebelumnya
+      if (videoIframe) {
+        videoIframe.src = '';
+        videoIframe.classList.add('hidden');
+      }
+      if (htmlVideo) {
+        htmlVideo.pause();
+        htmlVideo.src = '';
+        htmlVideo.classList.add('hidden');
+      }
+      if (mainImg) {
+        mainImg.classList.add('hidden');
+      }
+
+      var mediaType = cur.type || detectGalleryMediaType(cur.url);
+
+      if (mediaType === 'youtube') {
+        if (videoIframe) {
+          videoIframe.src = getYouTubeEmbedUrl(cur.url);
+          videoIframe.classList.remove('hidden');
+        }
+      } else if (mediaType === 'drive_video') {
+        if (videoIframe) {
+          videoIframe.src = convertDriveUrlToPreview(cur.url);
+          videoIframe.classList.remove('hidden');
+        }
+      } else if (mediaType === 'direct_video') {
+        if (htmlVideo) {
+          htmlVideo.src = cur.url;
+          htmlVideo.classList.remove('hidden');
+          htmlVideo.play().catch(function () { });
+        }
+      } else {
+        // Tampilkan Foto Gambar Penuh
+        if (mainImg) {
+          mainImg.style.opacity = '0.3';
+          mainImg.src = formatDirectImageUrl(cur.url);
+          mainImg.classList.remove('hidden');
+          mainImg.onload = function () { mainImg.style.opacity = '1'; };
+        }
+      }
+
+      if (counterEl) {
+        var badgeText = (mediaType !== 'image') ? '🎬 Video ' : 'Foto ';
+        counterEl.textContent = badgeText + (GALLERY_SLIDER.currentIndex + 1) + ' dari ' + items.length;
+      }
+
+      if (titleEl) {
+        titleEl.textContent = cur.title || 'Suasana Rumah Air Bogor Resto';
+      }
+
+      // Update highlight pada strip thumbnail mini & visibilitas navigasi
+      var strip = document.getElementById('galleryThumbStrip');
+      var btnPrev = document.getElementById('galleryBtnPrev');
+      var btnNext = document.getElementById('galleryBtnNext');
+      var subText = document.getElementById('galleryPhotoSub');
+
+      if (btnPrev) btnPrev.style.display = (items.length > 1) ? 'flex' : 'none';
+      if (btnNext) btnNext.style.display = (items.length > 1) ? 'flex' : 'none';
+      if (subText) subText.textContent = (items.length > 1) ? 'Geser layar atau ketuk panah untuk melihat media lainnya' : '';
+
+      if (strip) {
+        if (items.length <= 1) {
+          strip.style.display = 'none';
+        } else {
+          strip.style.display = 'flex';
+          var thumbs = strip.children;
+          for (var i = 0; i < thumbs.length; i++) {
+            if (i === GALLERY_SLIDER.currentIndex) {
+              thumbs[i].className = 'relative w-14 h-10 rounded-lg overflow-hidden shrink-0 border-2 border-sky-400 opacity-100 ring-2 ring-sky-400/40 transition-all';
+              thumbs[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            } else {
+              thumbs[i].className = 'relative w-14 h-10 rounded-lg overflow-hidden shrink-0 border border-stone-700 opacity-60 hover:opacity-90 transition-all cursor-pointer';
+            }
+          }
+        }
+      }
+    }
+
+    function nextGallerySlide(e) {
+      if (e) e.stopPropagation();
+      var total = GALLERY_SLIDER.items.length;
+      if (total <= 1) return;
+      GALLERY_SLIDER.currentIndex = (GALLERY_SLIDER.currentIndex + 1) % total;
+      updateGallerySlideView();
+    }
+
+    function prevGallerySlide(e) {
+      if (e) e.stopPropagation();
+      var total = GALLERY_SLIDER.items.length;
+      if (total <= 1) return;
+      GALLERY_SLIDER.currentIndex = (GALLERY_SLIDER.currentIndex - 1 + total) % total;
+      updateGallerySlideView();
+    }
+
+    function goToGallerySlide(idx) {
+      GALLERY_SLIDER.currentIndex = idx;
+      updateGallerySlideView();
+    }
+
+    function handleGallerySwipe() {
+      var diff = GALLERY_SLIDER.touchStartX - GALLERY_SLIDER.touchEndX;
+      // Ambang batas geser 40px
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          nextGallerySlide(); // Usap ke kiri -> slide berikutnya
+        } else {
+          prevGallerySlide(); // Usap ke kanan -> slide sebelumnya
+        }
+      }
+    }
+
+    function renderGalleryThumbnails() {
+      var strip = document.getElementById('galleryThumbStrip');
+      if (!strip) return;
+      if (GALLERY_SLIDER.items.length <= 1) {
+        strip.style.display = 'none';
+        strip.innerHTML = '';
+        return;
+      }
+      strip.style.display = 'flex';
+      strip.innerHTML = '';
+      GALLERY_SLIDER.items.forEach(function (item, idx) {
+        var isVideo = (item.type && item.type !== 'image');
+        var thumb = document.createElement('div');
+        thumb.className = (idx === GALLERY_SLIDER.currentIndex)
+          ? 'relative w-14 h-10 rounded-lg overflow-hidden shrink-0 border-2 border-sky-400 opacity-100 ring-2 ring-sky-400/40 transition-all'
+          : 'relative w-14 h-10 rounded-lg overflow-hidden shrink-0 border border-stone-700 opacity-60 hover:opacity-90 transition-all cursor-pointer';
+        thumb.onclick = function () { goToGallerySlide(idx); };
+
+        var img = document.createElement('img');
+        img.src = isVideo ? 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5' : formatDirectImageUrl(item.url);
+        img.alt = item.title;
+        img.className = 'w-full h-full object-cover';
+        thumb.appendChild(img);
+
+        // Jika video, tambahkan ikon Play segitiga kecil
+        if (isVideo) {
+          var playBadge = document.createElement('div');
+          playBadge.className = 'absolute inset-0 bg-stone-950/45 flex items-center justify-center text-white';
+          playBadge.innerHTML = '<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M4.5 3.5v13l11-6.5-11-6.5z"/></svg>';
+          thumb.appendChild(playBadge);
+        }
+
+        strip.appendChild(thumb);
+      });
+    }
+
+    // Keyboard listener navigasi panah kiri/kanan
+    document.addEventListener('keydown', function (e) {
+      var modal = document.getElementById('modalGalleryViewer');
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight') nextGallerySlide();
+        if (e.key === 'ArrowLeft') prevGallerySlide();
+        if (e.key === 'Escape') closeGalleryModal();
+      }
+    });
+
+    /**
+     * Mengonversi Tautan Google Drive ke Mode Pratinjau Embed (/preview)
+     */
+    function convertDriveUrlToPreview(url) {
+      if (!url) return '';
+      // Pola 1: drive.google.com/file/d/FILE_ID/view...
+      var match1 = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+      if (match1 && match1[1]) {
+        return 'https://drive.google.com/file/d/' + match1[1] + '/preview';
+      }
+      // Pola 2: drive.google.com/open?id=FILE_ID
+      var match2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      if (match2 && match2[1]) {
+        return 'https://drive.google.com/file/d/' + match2[1] + '/preview';
+      }
+      return url;
+    }
+
+    /**
+     * Mengonversi Tautan Gambar Google Drive ke CDN Langsung (lh3.googleusercontent.com)
+     */
+    function formatDirectImageUrl(url) {
+      if (!url) return '';
+      var str = url.toString().trim();
+
+      // Pola 1: drive.google.com/file/d/FILE_ID/view...
+      var match1 = str.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+      if (match1 && match1[1]) {
+        return 'https://lh3.googleusercontent.com/d/' + match1[1];
+      }
+
+      // Pola 2: drive.google.com/open?id=FILE_ID atau uc?id=FILE_ID
+      var match2 = str.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      if (match2 && match2[1]) {
+        return 'https://lh3.googleusercontent.com/d/' + match2[1];
+      }
+
+      return str;
+    }
+
+    /**
+     * Render Banner Promo Berjalan (Anti-Terpotong & Auto-Hide jika Nonaktif)
+     */
+    function renderPromoCarousel() {
+      var section = document.getElementById('promoSection');
+      var container = document.getElementById('promoContainer');
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      if (!APP_STATE.promo || APP_STATE.promo.length === 0) {
+        if (section) section.style.display = 'none';
+        return;
+      }
+
+      if (section) section.style.display = 'block';
+
+      APP_STATE.promo.forEach(function (item) {
+        var card = document.createElement('div');
+        card.className = 'min-w-[280px] sm:min-w-[320px] max-w-[340px] bg-surface rounded-2xl overflow-hidden border border-stone-200/80 shadow-soft snap-center flex-shrink-0 flex flex-col justify-between';
+
+        var waPromoText = encodeURIComponent('Halo Admin Rumah Air Bogor, saya tertarik dengan promo: ' + item.judul);
+        var waLink = 'https://api.whatsapp.com/send?phone=' + (APP_STATE.profile.NoWhatsAppIntl || '6281111861853') + '&text=' + waPromoText;
+        var directBanner = item.banner ? formatDirectImageUrl(item.banner) : 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5';
+
+        card.innerHTML =
+          '<div class="relative w-full h-44 sm:h-52 bg-stone-900 overflow-hidden flex items-center justify-center select-none">' +
+          '<!-- Latar belakang blur estetis untuk mengisi ruang jika rasio berbeda -->' +
+          '<img src="' + directBanner + '" alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 pointer-events-none">' +
+          '<!-- Gambar banner utama utuh 100% tanpa terpotong (anti-crop) -->' +
+          '<img src="' + directBanner + '" alt="' + escapeHtml(item.judul) + '" onerror="this.onerror=null; this.src=\'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5\';" class="relative z-10 max-w-full max-h-full object-contain drop-shadow-sm">' +
+          '<div class="absolute top-2.5 left-2.5 z-20 px-2.5 py-0.5 rounded-full bg-amber-warm text-white font-bold text-[10px] shadow-sm uppercase tracking-wider">Promo Spesial</div>' +
+          '</div>' +
+          '<div class="p-3.5 flex flex-col justify-between flex-grow space-y-2">' +
+          '<div>' +
+          '<h4 class="font-bold text-stone-900 text-xs sm:text-sm line-clamp-1">' + escapeHtml(item.judul) + '</h4>' +
+          '<p class="text-[11px] text-stone-600 mt-1 line-clamp-2 leading-relaxed">' + escapeHtml(item.keterangan) + '</p>' +
+          '</div>' +
+          '<a href="' + waLink + '" target="_blank" class="inline-flex items-center justify-center space-x-1 w-full py-2 px-3 rounded-xl bg-brand-deep hover:bg-brand-deeper text-white text-xs font-semibold transition-colors mt-2">' +
+          '<span>Ambil Promo via WA</span>' +
+          '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>' +
+          '</a>' +
+          '</div>';
+
+        container.appendChild(card);
+      });
+    }
+
+    /**
+     * Render Kategori Menu (Pills)
+     */
+    function renderCategoryPills() {
+      var categories = ['Semua'];
+      APP_STATE.menu.forEach(function (item) {
+        if (item.kategori && categories.indexOf(item.kategori) === -1) {
+          categories.push(item.kategori);
+        }
+      });
+
+      var container = document.getElementById('categoryPills');
+      if (!container) return;
+      container.innerHTML = '';
+
+      categories.forEach(function (cat) {
+        var btn = document.createElement('button');
+        var isActive = (cat === APP_STATE.selectedCategory);
+        btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 transition-all duration-200 ' +
+          (isActive
+            ? 'bg-brand-deep text-white shadow-sm ring-2 ring-brand-deep/30'
+            : 'bg-stone-100 text-stone-600 hover:bg-stone-200');
+        btn.textContent = cat;
+        btn.onclick = function () {
+          APP_STATE.selectedCategory = cat;
+          renderCategoryPills();
+          renderMenuCards();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    /**
+     * Render Daftar Kartu Menu Makanan & Minuman
+     */
+    function renderMenuCards() {
+      var container = document.getElementById('menuCardsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+
+      var filtered = APP_STATE.menu.filter(function (item) {
+        var matchCategory = (APP_STATE.selectedCategory === 'Semua') || (item.kategori === APP_STATE.selectedCategory);
+        var matchSearch = !APP_STATE.searchKeyword ||
+          item.nama.toLowerCase().indexOf(APP_STATE.searchKeyword) !== -1 ||
+          item.deskripsi.toLowerCase().indexOf(APP_STATE.searchKeyword) !== -1 ||
+          item.kategori.toLowerCase().indexOf(APP_STATE.searchKeyword) !== -1;
+        return matchCategory && matchSearch;
+      });
+
+      var countBadge = document.getElementById('menuCountBadge');
+      if (countBadge) countBadge.textContent = filtered.length + ' Menu Tersedia';
+
+      if (filtered.length === 0) {
+        container.innerHTML =
+          '<div class="col-span-full py-8 text-center text-stone-500 space-y-2">' +
+          '<p class="text-xs">Tidak ditemukan hidangan yang cocok dengan kata kunci "' + escapeHtml(APP_STATE.searchKeyword) + '".</p>' +
+          '<button onclick="resetMenuFilter()" class="text-xs text-brand-deep font-bold underline">Tampilkan Semua Menu</button>' +
+          '</div>';
+        return;
+      }
+
+      filtered.forEach(function (item) {
+        var card = document.createElement('div');
+        card.className = 'p-3 rounded-2xl border border-stone-200/80 bg-white hover:border-brand-deep/40 transition-all duration-200 shadow-sm flex space-x-3 group';
+
+        var badgeHtml = '';
+        if (item.badge) {
+          badgeHtml = '<span class="inline-block px-2 py-0.5 rounded-md bg-amber-light text-amber-dark font-extrabold text-[9px] uppercase tracking-wider mb-1">' + escapeHtml(item.badge) + '</span>';
+        }
+
+        var waOrderMsg = encodeURIComponent('Halo Rumah Air Bogor Resto, saya ingin pesan menu: ' + item.nama + ' (' + item.hargaFormatted + ').');
+        var waOrderLink = 'https://api.whatsapp.com/send?phone=' + (APP_STATE.profile.NoWhatsAppIntl || '6281111861853') + '&text=' + waOrderMsg;
+
+        card.innerHTML =
+          '<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden bg-stone-100 shrink-0 relative">' +
+          '<img src="' + item.foto + '" alt="' + escapeHtml(item.nama) + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">' +
+          '</div>' +
+          '<div class="flex flex-col justify-between flex-grow min-w-0">' +
+          '<div>' +
+          badgeHtml +
+          '<h4 class="font-bold text-stone-900 text-xs sm:text-sm truncate">' + escapeHtml(item.nama) + '</h4>' +
+          '<p class="text-[11px] text-stone-500 line-clamp-2 leading-tight mt-0.5">' + escapeHtml(item.deskripsi) + '</p>' +
+          '</div>' +
+          '<div class="flex items-center justify-between pt-1.5 border-t border-stone-100 mt-1">' +
+          '<span class="font-extrabold text-xs sm:text-sm text-brand-deep">' + item.hargaFormatted + '</span>' +
+          '<a href="' + waOrderLink + '" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-brand-deep hover:text-white text-stone-700 text-[10px] font-bold transition-colors flex items-center space-x-1">' +
+          '<span>Pesan</span>' +
+          '<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>' +
+          '</a>' +
+          '</div>' +
+          '</div>';
+
+        container.appendChild(card);
+      });
+    }
+
+    function resetMenuFilter() {
+      APP_STATE.selectedCategory = 'Semua';
+      APP_STATE.searchKeyword = '';
+      document.getElementById('searchInput').value = '';
+      renderCategoryPills();
+      renderMenuCards();
+    }
+
+    /**
+     * Submit Form Reservasi Pintar (Anti-Deadlock & Safe Event Binding)
+     */
+    function handleBookingSubmit() {
+      var btn = document.getElementById('btnSubmitBooking');
+      var btnText = document.getElementById('btnSubmitText');
+
+      // Ambil nilai primitif murni
+      var payload = {
+        nama: document.getElementById('inputNama').value.trim(),
+        nomorWA: document.getElementById('inputWA').value.trim(),
+        tanggal: document.getElementById('inputTanggal').value,
+        jam: document.getElementById('inputJam').value,
+        pax: document.getElementById('inputPax').value,
+        area: document.getElementById('inputArea').value,
+        catatan: document.getElementById('inputCatatan').value.trim()
+      };
+
+      if (!payload.nama || !payload.nomorWA || !payload.tanggal) {
+        showToast('Mohon lengkapi nama, nomor WhatsApp, dan tanggal reservasi.', 'error');
+        return;
+      }
+
+      // Kunci tombol aksi (Anti-Double Submit)
+      btn.disabled = true;
+      btn.classList.add('opacity-75', 'cursor-not-allowed');
+      btnText.textContent = 'Memproses Reservasi...';
+
+      // Jika berjalan di lingkungan Google Apps Script
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        google.script.run
+          .withSuccessHandler(function (response) {
+            btn.disabled = false;
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+
+            if (response && response.success) {
+              showSuccessModal(response.noReservasi, response.waUrl);
+              document.getElementById('bookingForm').reset();
+            } else {
+              showToast((response && response.message) || 'Gagal memproses reservasi.', 'error');
+            }
+          })
+          .withFailureHandler(function (error) {
+            // Anti-Deadlock: kembalikan tombol jika koneksi bermasalah
+            btn.disabled = false;
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+            showToast('Kendala jaringan. Mengarahkan langsung ke WhatsApp...', 'info');
+
+            // Fallback langsung buat WA link darurat
+            directFallbackWA(payload);
+          })
+          .submitReservasi(payload);
+      } else {
+        // Safe Preview Mode (Offline / Localhost)
+        setTimeout(function () {
+          btn.disabled = false;
+          btn.classList.remove('opacity-75', 'cursor-not-allowed');
+          btnText.textContent = 'Kirim Reservasi ke WhatsApp Resto';
+
+          var demoID = 'RAB-' + new Date().getFullYear() + '11-001';
+          var waFallbackUrl = directFallbackWA(payload, true);
+          showSuccessModal(demoID, waFallbackUrl);
+        }, 600);
+      }
+    }
+
+    /**
+     * Fallback WhatsApp Bridge jika dijalankan di luar iframe Apps Script
+     */
+    function directFallbackWA(payload, returnOnly) {
+      var targetPhone = APP_STATE.profile.NoWhatsAppIntl || '6281111861853';
+      var text =
+        'Halo Admin *Rumah Air Bogor Resto*,\n' +
+        'Saya ingin mengonfirmasi *Reservasi Meja / Saung*:\n\n' +
+        '👤 *Nama Pemesan:* ' + payload.nama + '\n' +
+        '📱 *Nomor Kontak:* ' + payload.nomorWA + '\n' +
+        '📅 *Tanggal:* ' + payload.tanggal + '\n' +
+        '⏰ *Waktu:* ' + payload.jam + ' WIB\n' +
+        '👥 *Jumlah Tamu:* ' + payload.pax + ' Orang (Pax)\n' +
+        '🏞️ *Pilihan Area:* ' + payload.area + '\n' +
+        '📝 *Catatan Khusus:* ' + (payload.catatan || '-') + '\n\n' +
+        'Mohon informasikan ketersediaan saung dan konfirmasi booking kami. Terima kasih!';
+
+      var waUrl = 'https://api.whatsapp.com/send?phone=' + targetPhone + '&text=' + encodeURIComponent(text);
+      if (returnOnly) return waUrl;
+      window.open(waUrl, '_blank');
+    }
+
+    /**
+     * Tampilkan Modal Sukses
+     */
+    function showSuccessModal(noReservasi, waUrl) {
+      document.getElementById('modalNoReservasi').textContent = noReservasi;
+      document.getElementById('modalBtnWA').href = waUrl;
+
+      var modal = document.getElementById('modalSukses');
+      modal.classList.remove('hidden');
+      setTimeout(function () {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+        modal.querySelector('div').classList.add('scale-100');
+      }, 20);
+
+      // Otomatis buka tab WhatsApp setelah jeda halus
+      setTimeout(function () {
+        window.open(waUrl, '_blank');
+      }, 1000);
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('modalSukses');
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.remove('scale-100');
+      modal.querySelector('div').classList.add('scale-95');
+      setTimeout(function () {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    /**
+     * Toast Notification
+     */
+    function showToast(message, type) {
+      var toast = document.getElementById('toastNotification');
+      var toastMsg = document.getElementById('toastMessage');
+      var toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.textContent = message;
+      if (type === 'success') toastIcon.textContent = '✅';
+      else if (type === 'error') toastIcon.textContent = '⚠️';
+      else toastIcon.textContent = 'ℹ️';
+
+      toast.classList.remove('opacity-0', 'translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(function () {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-2');
+      }, 3500);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text.toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+
+</html>
