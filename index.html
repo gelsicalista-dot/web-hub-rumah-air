@@ -72,6 +72,15 @@
   </script>
 
   <style>
+    html,
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      letter-spacing: -0.012em;
+    }
+
     body {
       background-color: #FAF8F5;
       color: #1E293B;
@@ -153,10 +162,10 @@
   </header>
 
   <!-- MAIN CONTAINER (Mobile-First Hub) -->
-  <main class="flex-grow max-w-2xl w-full mx-auto px-4 pt-4 pb-16 space-y-6">
+  <main class="flex-grow max-w-2xl w-full mx-auto px-3.5 sm:px-4 pt-3.5 sm:pt-4 pb-16 space-y-4 sm:space-y-5">
 
     <!-- HERO PROFILE CARD (Anti-AI Human Crafted Aesthetic) -->
-    <section class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-stone-200/70">
+    <section class="bg-surface rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft border border-stone-200/70">
       <!-- Cover Image / Hero Slideshow Container -->
       <div id="heroSliderContainer" class="relative h-44 sm:h-56 w-full overflow-hidden bg-brand-deep select-none">
         <!-- Slides Wrapper (0 Detik: Langsung Tampil Foto Banner Resmi) -->
@@ -179,8 +188,8 @@
 
         <!-- Floating Badge -->
         <div
-          class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-brand-deep shadow-sm flex items-center space-x-1 z-20">
-          <svg class="w-3.5 h-3.5 text-amber-warm fill-amber-warm" viewBox="0 0 20 20">
+          class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-semibold text-stone-800 shadow-sm border border-stone-200/50 flex items-center space-x-1 z-20">
+          <svg class="w-3 h-3 text-amber-500 fill-amber-500" viewBox="0 0 20 20">
             <path
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
             </path>
@@ -190,12 +199,12 @@
       </div>
 
       <!-- Profile Details -->
-      <div class="px-5 pt-0 pb-6 relative">
-        <!-- Logo Avatar Resmi Rumah Air Bogor (Solid Opaque White Background) -->
-        <div class="flex justify-between items-end -mt-12 mb-3">
+      <div class="px-4 sm:px-5 pt-0 pb-5 sm:pb-6 relative">
+        <!-- Logo Avatar Resmi Rumah Air Bogor (Ramping & Proporsional Luxury) -->
+        <div class="flex justify-between items-end -mt-8 sm:-mt-10 mb-2.5">
           <div
-            class="relative z-20 w-24 h-24 rounded-2xl bg-white p-2 shadow-card border-2 border-white overflow-hidden flex items-center justify-center ring-4 ring-black/5"
-            style="background-color: #ffffff !important;">
+            class="relative z-20 rounded-2xl bg-white p-1.5 shadow-md border-2 border-white overflow-hidden flex items-center justify-center ring-1 ring-black/5"
+            style="width: 72px; height: 72px; background-color: #ffffff !important;">
             <img id="restoLogoImg" src="https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-"
               alt="Logo Rumah Air Bogor"
               onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/165WesmJN1ixY3SPzVeWvjmKVGAkCMTA-';"
@@ -203,8 +212,8 @@
           </div>
           <!-- Verified Badge -->
           <div
-            class="flex items-center space-x-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-semibold border border-emerald-200">
-            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+            class="flex items-center space-x-1 px-2.5 py-0.5 bg-emerald-50/90 text-emerald-800 rounded-full text-[10px] sm:text-xs font-medium border border-emerald-200/60 shadow-2xs">
+            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd"
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                 clip-rule="evenodd"></path>
@@ -214,16 +223,16 @@
         </div>
 
         <!-- Resto Title & Description -->
-        <h2 id="restoTitle" class="text-xl sm:text-2xl font-extrabold text-stone-900 tracking-tight">Rumah Air Bogor
+        <h2 id="restoTitle" class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight">Rumah Air Bogor
           Resto</h2>
-        <p id="restoTagline" class="text-sm text-stone-600 mt-1 leading-relaxed">
+        <p id="restoTagline" class="text-xs text-stone-500 mt-0.5 leading-relaxed font-normal">
           Indonesian Culinary Heritage.
         </p>
 
         <!-- Location Pin Pill -->
         <a id="linkAlamat" href="https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence" target="_blank"
-          class="inline-flex items-center space-x-2 mt-3 text-xs text-stone-700 bg-stone-100/90 hover:bg-stone-200/90 px-3 py-2 rounded-xl border border-stone-200/80 transition-colors">
-          <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          class="inline-flex items-center space-x-1.5 mt-2.5 text-[11px] text-stone-600 bg-stone-50/90 hover:bg-stone-100 px-2.5 py-1.5 rounded-lg border border-stone-200/70 transition-colors max-w-full">
+          <svg class="w-3.5 h-3.5 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
@@ -231,111 +240,111 @@
           </svg>
           <span id="restoAlamatText" class="truncate font-medium">Jl. Raya Boulevard CBD Bogor Nirwana Residence,
             Bogor</span>
-          <svg class="w-3.5 h-3.5 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-3 h-3 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </a>
 
-        <!-- 3 QUICK ACTION BUTTONS (GRID) -->
-        <div class="grid grid-cols-3 gap-2.5 mt-5">
+        <!-- 3 QUICK ACTION BUTTONS (GRID) - Luxury Touch Cards -->
+        <div class="grid grid-cols-3 gap-2 mt-4">
           <!-- Action 1: Direct WhatsApp -->
           <a id="btnDirectWA"
             href="https://api.whatsapp.com/send?phone=6281111861853&text=Halo%20Admin%20Rumah%20Air%20Bogor%20Resto%2C%20saya%20ingin%20tanya%20informasi%20resto."
             target="_blank"
-            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100/90 border border-emerald-200/70 text-emerald-900 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            class="flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-stone-50/70 hover:bg-emerald-50/80 border border-stone-200/70 hover:border-emerald-200 text-stone-800 font-semibold transition-all duration-200 group active:scale-95 text-center shadow-2xs">
             <div
-              class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center mb-1 shadow-2xs group-hover:scale-105 transition-transform">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.297.144.35.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z" />
               </svg>
             </div>
-            <span class="text-xs">Chat WA</span>
+            <span class="text-[11px] font-semibold text-stone-800">Chat WA</span>
           </a>
 
           <!-- Action 2: Menu PDF Direct Link -->
           <a id="btnDirectMenu" href="#" target="_blank"
-            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-amber-50 hover:bg-amber-100/90 border border-amber-200/70 text-amber-900 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            class="flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-stone-50/70 hover:bg-amber-50/80 border border-stone-200/70 hover:border-amber-200 text-stone-800 font-semibold transition-all duration-200 group active:scale-95 text-center shadow-2xs">
             <div
-              class="w-9 h-9 rounded-xl bg-amber-warm text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center mb-1 shadow-2xs group-hover:scale-105 transition-transform">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
                 </path>
               </svg>
             </div>
-            <span class="text-xs">Buku Menu</span>
+            <span class="text-[11px] font-semibold text-stone-800">Buku Menu</span>
           </a>
 
           <!-- Action 3: Lokasi Maps -->
           <a id="btnDirectMaps" href="https://maps.google.com/?q=Rumah+Air+Bogor+Nirwana+Residence" target="_blank"
-            class="flex flex-col items-center justify-center p-3 rounded-2xl bg-stone-100 hover:bg-stone-200/90 border border-stone-200 text-stone-800 font-semibold transition-all duration-200 group active:scale-95 text-center">
+            class="flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-stone-50/70 hover:bg-stone-100 border border-stone-200/70 hover:border-stone-300 text-stone-800 font-semibold transition-all duration-200 group active:scale-95 text-center shadow-2xs">
             <div
-              class="w-9 h-9 rounded-xl bg-stone-800 text-white flex items-center justify-center mb-1.5 shadow-sm group-hover:scale-110 transition-transform">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-stone-200 text-stone-800 flex items-center justify-center mb-1 shadow-2xs group-hover:scale-105 transition-transform">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7">
                 </path>
               </svg>
             </div>
-            <span class="text-xs">Petunjuk Arah</span>
+            <span class="text-[11px] font-semibold text-stone-800">Petunjuk Arah</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- HIGHLIGHT RESTO (GRID 3 TOMBOL AKSI: BUFFET, MEETING & GALERI) -->
-    <section class="grid grid-cols-3 gap-2 sm:gap-3">
+    <!-- HIGHLIGHT RESTO (GRID 3 TOMBOL FITUR: BUFFET, MEETING & GALERI) -->
+    <section class="grid grid-cols-3 gap-2">
       <!-- Tombol 1: Buffet Package (Event & Wedding) -->
       <button type="button" onclick="openBuffetModal()"
-        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-amber-50/60 border border-stone-200/90 hover:border-amber-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        class="group relative flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-surface hover:bg-amber-50/50 border border-stone-200/80 hover:border-amber-300 shadow-2xs transition-all duration-200 active:scale-95 text-center cursor-pointer">
         <span
-          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-amber-warm text-[9px] font-extrabold text-white shadow-2xs tracking-tight">2
+          class="absolute -top-1.5 right-1.5 px-1.5 py-0.2 rounded-full bg-amber-warm text-[8px] sm:text-[9px] font-bold text-white shadow-2xs tracking-tight">2
           Paket</span>
         <div
-          class="w-9 h-9 mx-auto rounded-xl bg-amber-100/80 text-amber-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          class="w-7 h-7 sm:w-8 sm:h-8 mx-auto rounded-lg bg-amber-100/80 text-amber-800 flex items-center justify-center mb-1 group-hover:scale-105 transition-transform shadow-2xs">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
             </path>
           </svg>
         </div>
-        <p class="text-[11px] font-bold text-stone-900 leading-tight">Buffet Package</p>
-        <p class="text-[10px] text-stone-500 mt-0.5">Event & Wedding</p>
+        <p class="text-[11px] font-semibold text-stone-900 leading-tight">Buffet Package</p>
+        <p class="text-[9px] sm:text-[10px] text-stone-400 mt-0.5 font-normal">Event & Wedding</p>
       </button>
 
       <!-- Tombol 2: Meeting Package -->
       <button type="button" onclick="openMeetingPdfModal()"
-        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-emerald-50/60 border border-stone-200/90 hover:border-emerald-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        class="group relative flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-surface hover:bg-emerald-50/50 border border-stone-200/80 hover:border-emerald-300 shadow-2xs transition-all duration-200 active:scale-95 text-center cursor-pointer">
         <span
-          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-emerald-700 text-[9px] font-extrabold text-white shadow-2xs tracking-tight">PDF</span>
+          class="absolute -top-1.5 right-1.5 px-1.5 py-0.2 rounded-full bg-emerald-700 text-[8px] sm:text-[9px] font-bold text-white shadow-2xs tracking-tight">PDF</span>
         <div
-          class="w-9 h-9 mx-auto rounded-xl bg-emerald-100/80 text-emerald-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          class="w-7 h-7 sm:w-8 sm:h-8 mx-auto rounded-lg bg-emerald-100/80 text-emerald-800 flex items-center justify-center mb-1 group-hover:scale-105 transition-transform shadow-2xs">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
             </path>
           </svg>
         </div>
-        <p class="text-[11px] font-bold text-stone-900 leading-tight">Meeting Package</p>
-        <p class="text-[10px] text-stone-500 mt-0.5">Bisnis & Arisan</p>
+        <p class="text-[11px] font-semibold text-stone-900 leading-tight">Meeting Package</p>
+        <p class="text-[9px] sm:text-[10px] text-stone-400 mt-0.5 font-normal">Bisnis & Arisan</p>
       </button>
 
       <!-- Tombol 3: Galeri Resto -->
       <button type="button" onclick="openGalleryModal()"
-        class="group relative flex flex-col items-center justify-center p-3 rounded-2xl bg-surface hover:bg-sky-50/60 border border-stone-200/90 hover:border-sky-300 shadow-sm hover:shadow-soft transition-all duration-200 active:scale-95 text-center cursor-pointer">
+        class="group relative flex flex-col items-center justify-center py-2.5 px-1.5 rounded-xl bg-surface hover:bg-sky-50/50 border border-stone-200/80 hover:border-sky-300 shadow-2xs transition-all duration-200 active:scale-95 text-center cursor-pointer">
         <span
-          class="absolute -top-1.5 right-2 px-1.5 py-0.5 rounded-full bg-sky-700 text-[9px] font-extrabold text-white shadow-2xs tracking-tight">Foto</span>
+          class="absolute -top-1.5 right-1.5 px-1.5 py-0.2 rounded-full bg-sky-700 text-[8px] sm:text-[9px] font-bold text-white shadow-2xs tracking-tight">Foto</span>
         <div
-          class="w-9 h-9 mx-auto rounded-xl bg-sky-100/80 text-sky-800 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+          class="w-7 h-7 sm:w-8 sm:h-8 mx-auto rounded-lg bg-sky-100/80 text-sky-800 flex items-center justify-center mb-1 group-hover:scale-105 transition-transform shadow-2xs">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
             </path>
           </svg>
         </div>
-        <p class="text-[11px] font-bold text-stone-900 leading-tight">Galeri Resto</p>
-        <p class="text-[10px] text-stone-500 mt-0.5">Suasana & Danau</p>
+        <p class="text-[11px] font-semibold text-stone-900 leading-tight">Galeri Resto</p>
+        <p class="text-[9px] sm:text-[10px] text-stone-400 mt-0.5 font-normal">Suasana & Danau</p>
       </button>
     </section>
 
@@ -363,27 +372,27 @@
 
     <!-- SHOWCASE BUKU MENU DIGITAL (FORMAT PDF GOOGLE DRIVE) -->
     <section id="menuSection"
-      class="bg-surface rounded-3xl p-5 sm:p-6 shadow-soft border border-stone-200/70 space-y-4">
+      class="bg-surface rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-soft border border-stone-200/70 space-y-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <span class="w-2.5 h-2.5 rounded-full bg-amber-warm"></span>
           <span
-            class="text-xs font-bold uppercase tracking-wider text-amber-dark bg-amber-light/80 px-2.5 py-0.5 rounded-full">Menu
+            class="text-[11px] font-bold uppercase tracking-wider text-amber-dark bg-amber-light/80 px-2 py-0.5 rounded-full">Menu
             Regullar</span>
         </div>
         <span class="text-[11px] text-stone-500 font-medium">Buku Menu Digital</span>
       </div>
 
       <div>
-        <h3 class="text-lg sm:text-xl font-extrabold text-stone-900 tracking-tight">Buku Menu & Daftar Harga Terkini
+        <h3 class="text-base sm:text-lg font-bold text-stone-900 tracking-tight">Buku Menu & Daftar Harga Terkini
         </h3>
-        <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+        <p class="text-xs text-stone-500 mt-0.5 leading-relaxed">
           Seluruh hidangan khas Nusantara (Sunda, Jawa dan Bali) terangkum lengkap dalam buku menu resmi kami.
         </p>
       </div>
 
       <!-- PDF Showcase Card -->
-      <div class="p-4 rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50/40 border border-stone-200/90 space-y-4">
+      <div class="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50/40 border border-stone-200/90 space-y-3.5">
         <!-- Visual Banner / Cover Slideshow (Auto-Slide seperti Banner Utama, Bebas Tulisan) -->
         <div id="menuSliderContainer"
           class="relative h-44 sm:h-52 w-full rounded-xl overflow-hidden bg-stone-900 shadow-sm border border-stone-200 select-none">
@@ -403,7 +412,7 @@
         <div class="space-y-2 pt-1">
           <!-- Button 1: Buka PDF di Drive -->
           <a id="btnBukaMenuPdf" href="#" target="_blank"
-            class="w-full py-3.5 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-bold text-xs sm:text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
+            class="w-full py-3 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-semibold text-xs sm:text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
@@ -434,18 +443,18 @@
 
     <!-- FORMULIR RESERVASI MEJA / SAUNG (SMART BOOKING BRIDGE) -->
     <section id="reservasiSection"
-      class="bg-gradient-to-br from-brand-deep to-brand-deeper text-white rounded-3xl p-5 sm:p-6 shadow-floating space-y-4">
+      class="bg-gradient-to-br from-brand-deep to-brand-deeper text-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-floating space-y-4">
       <div>
         <div
-          class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-amber-warm text-[11px] font-bold mb-2">
+          class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-amber-warm text-[10px] sm:text-[11px] font-bold mb-2">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
           <span>Konfirmasi Instan ke WhatsApp</span>
         </div>
-        <h3 class="text-xl font-extrabold tracking-tight">Formulir Reservasi Meja / Saung</h3>
-        <p class="text-xs text-stone-200 mt-1 leading-relaxed">
+        <h3 class="text-base sm:text-lg font-bold tracking-tight">Formulir Reservasi Meja / Saung</h3>
+        <p class="text-xs text-stone-200/90 mt-0.5 leading-relaxed">
           Amankan saung apung atas danau Anda lebih awal untuk keluarga atau rombongan. Data Anda tercatat otomatis dan
           draf pesan akan langsung terusan ke WhatsApp resto.
         </p>
@@ -525,8 +534,8 @@
 
         <!-- Submit Button with Anti-Deadlock State -->
         <button type="submit" id="btnSubmitBooking"
-          class="w-full py-3.5 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-bold text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          class="w-full py-3 px-4 rounded-xl bg-amber-warm hover:bg-amber-dark text-white font-semibold text-xs sm:text-sm shadow-card flex items-center justify-center space-x-2 transition-all active:scale-[0.98]">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8">
             </path>
           </svg>
@@ -646,7 +655,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
-      <h3 class="text-lg font-extrabold text-stone-900">Reservasi Dicatat!</h3>
+      <h3 class="text-base font-bold text-stone-900">Reservasi Dicatat!</h3>
       <p class="text-xs text-stone-600 mt-1">
         Nomor reservasi Anda: <span id="modalNoReservasi"
           class="font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">RAB-202611-001</span>
@@ -1931,7 +1940,7 @@
 
         var badgeHtml = '';
         if (item.badge) {
-          badgeHtml = '<span class="inline-block px-2 py-0.5 rounded-md bg-amber-light text-amber-dark font-extrabold text-[9px] uppercase tracking-wider mb-1">' + escapeHtml(item.badge) + '</span>';
+          badgeHtml = '<span class="inline-block px-2 py-0.5 rounded-md bg-amber-light text-amber-dark font-bold text-[9px] uppercase tracking-wider mb-1">' + escapeHtml(item.badge) + '</span>';
         }
 
         var waOrderMsg = encodeURIComponent('Halo Rumah Air Bogor Resto, saya ingin pesan menu: ' + item.nama + ' (' + item.hargaFormatted + ').');
@@ -1948,7 +1957,7 @@
           '<p class="text-[11px] text-stone-500 line-clamp-2 leading-tight mt-0.5">' + escapeHtml(item.deskripsi) + '</p>' +
           '</div>' +
           '<div class="flex items-center justify-between pt-1.5 border-t border-stone-100 mt-1">' +
-          '<span class="font-extrabold text-xs sm:text-sm text-brand-deep">' + item.hargaFormatted + '</span>' +
+          '<span class="font-bold text-xs sm:text-sm text-brand-deep">' + item.hargaFormatted + '</span>' +
           '<a href="' + waOrderLink + '" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-brand-deep hover:text-white text-stone-700 text-[10px] font-bold transition-colors flex items-center space-x-1">' +
           '<span>Pesan</span>' +
           '<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>' +
