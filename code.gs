@@ -494,7 +494,7 @@ function submitReservasi(payload) {
     var tanggalAcara = sanitizeString(payload.tanggal);
     var jamAcara = sanitizeString(payload.jam);
     var jumlahPax = parseInt(payload.pax, 10) || 1;
-    var pilihanArea = sanitizeString(payload.area) || 'Saung Atas Air';
+    var pilihanArea = sanitizeString(payload.area) || '-';
     var catatanKhusus = sanitizeString(payload.catatan) || '-';
 
     if (!namaTamu || !nomorWA || !tanggalAcara || !jamAcara) {
@@ -539,9 +539,9 @@ function submitReservasi(payload) {
       '👤 *Nama Pemesan:* ' + namaTamu + '\n' +
       '📱 *Nomor Kontak:* ' + nomorWA + '\n' +
       '📅 *Tanggal:* ' + tanggalAcara + '\n' +
-      '⏰ *Waktu/Jam:* ' + jamAcara + ' WIB\n' +
+      '⏰ *Waktu/Jam:* ' + jamAcara + (jamAcara.toUpperCase().indexOf('WIB') === -1 ? ' WIB\n' : '\n') +
       '👥 *Jumlah Tamu:* ' + jumlahPax + ' Orang (Pax)\n' +
-      '🏞️ *Pilihan Area:* ' + pilihanArea + '\n' +
+      (pilihanArea && pilihanArea !== '-' ? ('🏞️ *Pilihan Area:* ' + pilihanArea + '\n') : '') +
       '📝 *Catatan Khusus:* ' + catatanKhusus + '\n\n' +
       'Mohon informasikan ketersediaan saung dan kelengkapan reservasi kami. Terima kasih!';
 

@@ -488,39 +488,27 @@
           <div>
             <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Jam Kedatangan
               *</label>
-            <select id="inputJam" required
-              class="w-full px-3 py-2.5 rounded-xl bg-stone-900 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
-              <option value="11:00">11:00 WIB (Makan Siang)</option>
-              <option value="12:00" selected>12:00 WIB (Makan Siang)</option>
-              <option value="13:00">13:00 WIB (Makan Siang)</option>
-              <option value="14:00">14:00 WIB</option>
-              <option value="16:00">16:00 WIB (Sore Danau)</option>
-              <option value="17:00">17:00 WIB (Sore Danau)</option>
-              <option value="18:30">18:30 WIB (Makan Malam)</option>
-              <option value="19:30">19:30 WIB (Makan Malam)</option>
-            </select>
+            <input type="text" id="inputJam" list="jamOptions" required placeholder="Contoh: 12:30 WIB" value="12:00 WIB"
+              class="w-full px-3 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
+            <datalist id="jamOptions">
+              <option value="11:00 WIB (Makan Siang)">
+              <option value="12:00 WIB (Makan Siang)">
+              <option value="13:00 WIB (Makan Siang)">
+              <option value="14:00 WIB">
+              <option value="16:00 WIB (Sore Danau)">
+              <option value="17:00 WIB (Sore Danau)">
+              <option value="18:30 WIB (Makan Malam)">
+              <option value="19:30 WIB (Makan Malam)">
+            </datalist>
           </div>
         </div>
 
-        <!-- Jumlah Pax & Pilihan Area -->
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Jumlah Tamu
-              (Pax) *</label>
-            <input type="number" id="inputPax" min="1" max="500" value="4" required
-              class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
-          </div>
-          <div>
-            <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Pilihan Area
-              Saung *</label>
-            <select id="inputArea"
-              class="w-full px-3 py-2.5 rounded-xl bg-stone-900 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
-              <option value="Saung Apung Atas Danau (Favorit)">Saung Apung Atas Danau</option>
-              <option value="Gazebo Utama Tepi Danau">Gazebo Utama Danau</option>
-              <option value="Area Ruang Acara / VIP AC">Ruang Acara / VIP AC</option>
-              <option value="Meja Santai Dekat Playground">Dekat Playground Anak</option>
-            </select>
-          </div>
+        <!-- Jumlah Tamu (Pax) - Full Width -->
+        <div>
+          <label class="block text-[11px] font-semibold text-stone-300 uppercase tracking-wider mb-1">Jumlah Tamu
+            (Pax) *</label>
+          <input type="number" id="inputPax" min="1" max="500" value="4" required
+            class="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-warm transition-all">
         </div>
 
         <!-- Catatan Khusus -->
@@ -1860,8 +1848,8 @@
           '</div>' +
           '<div class="p-3.5 flex flex-col justify-between flex-grow space-y-2">' +
           '<div>' +
-          '<h4 class="font-bold text-stone-900 text-xs sm:text-sm line-clamp-1">' + escapeHtml(item.judul) + '</h4>' +
-          '<p class="text-[11px] text-stone-600 mt-1 line-clamp-2 leading-relaxed">' + escapeHtml(item.keterangan) + '</p>' +
+          '<h4 class="font-bold text-stone-900 text-xs sm:text-sm leading-snug">' + escapeHtml(item.judul) + '</h4>' +
+          '<p class="text-[11px] text-stone-600 mt-1 leading-relaxed whitespace-pre-line">' + escapeHtml(item.keterangan) + '</p>' +
           '</div>' +
           '<a href="' + waLink + '" target="_blank" class="inline-flex items-center justify-center space-x-1 w-full py-2 px-3 rounded-xl bg-brand-deep hover:bg-brand-deeper text-white text-xs font-semibold transition-colors mt-2">' +
           '<span>Ambil Promo via WA</span>' +
@@ -1991,7 +1979,7 @@
         tanggal: document.getElementById('inputTanggal').value,
         jam: document.getElementById('inputJam').value,
         pax: document.getElementById('inputPax').value,
-        area: document.getElementById('inputArea').value,
+        area: (document.getElementById('inputArea') ? document.getElementById('inputArea').value : '-'),
         catatan: document.getElementById('inputCatatan').value.trim()
       };
 
@@ -2081,9 +2069,9 @@
         '👤 *Nama Pemesan:* ' + payload.nama + '\n' +
         '📱 *Nomor Kontak:* ' + payload.nomorWA + '\n' +
         '📅 *Tanggal:* ' + payload.tanggal + '\n' +
-        '⏰ *Waktu:* ' + payload.jam + ' WIB\n' +
+        '⏰ *Waktu:* ' + payload.jam + (payload.jam.toUpperCase().indexOf('WIB') === -1 ? ' WIB\n' : '\n') +
         '👥 *Jumlah Tamu:* ' + payload.pax + ' Orang (Pax)\n' +
-        '🏞️ *Pilihan Area:* ' + payload.area + '\n' +
+        (payload.area && payload.area !== '-' ? ('🏞️ *Pilihan Area:* ' + payload.area + '\n') : '') +
         '📝 *Catatan Khusus:* ' + (payload.catatan || '-') + '\n\n' +
         'Mohon informasikan ketersediaan saung dan konfirmasi booking kami. Terima kasih!';
 
