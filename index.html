@@ -392,19 +392,27 @@
 
       <!-- PDF Showcase Card -->
       <div class="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-stone-50 to-amber-50/40 border border-stone-200/90 space-y-3.5">
-        <!-- Visual Banner / Cover Slideshow (Auto-Slide seperti Banner Utama, Bebas Tulisan) -->
+        <!-- Visual Banner / Cover Slideshow (Auto-Slide, Dual-Layer Anti-Crop & Keterangan Nama Menu) -->
         <div id="menuSliderContainer"
-          class="relative h-44 sm:h-52 w-full rounded-xl overflow-hidden bg-stone-900 shadow-sm border border-stone-200 select-none">
+          class="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden bg-stone-900 shadow-sm border border-stone-200 select-none">
           <div id="menuSlidesWrapper" class="w-full h-full relative">
             <div id="menuSlide_0"
-              class="menu-slide absolute inset-0 w-full h-full opacity-100 z-1 transition-opacity duration-1000">
+              class="menu-slide absolute inset-0 w-full h-full opacity-100 z-1 transition-opacity duration-1000 flex items-center justify-center overflow-hidden">
               <img src="https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5"
-                alt="Buku Menu Rumah Air Bogor Resto" class="w-full h-full object-cover object-center">
+                alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 pointer-events-none">
+              <img src="https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5"
+                alt="Buku Menu Rumah Air Bogor Resto" class="relative z-10 max-w-full max-h-full object-contain drop-shadow-sm select-none">
             </div>
           </div>
-          <!-- Slider Dots Indicator (if > 1 image) -->
-          <div id="menuSliderDots"
-            class="absolute bottom-2.5 left-1/2 transform -translate-x-1/2 flex items-center space-x-1.5 z-20"></div>
+
+          <!-- Bottom Caption Bar (Keterangan Nama Menu dari Google Sheets) -->
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-950/90 via-stone-950/60 to-transparent pt-8 pb-3 px-4 z-20 flex flex-col items-center justify-end text-center pointer-events-none">
+            <p id="menuSlideCaption" class="text-xs sm:text-sm font-semibold text-white drop-shadow-md tracking-wide line-clamp-1 transition-all duration-300">
+              Buku Menu & Kuliner Khas Nusantara
+            </p>
+            <!-- Slider Dots Indicator (if > 1 image) -->
+            <div id="menuSliderDots" class="flex items-center space-x-1.5 mt-1.5 pointer-events-auto"></div>
+          </div>
         </div>
 
         <!-- Dual Action Buttons -->
@@ -950,7 +958,13 @@
         VideoGaleriResto: '',
         VideoGaleri: []
       },
-      bannerMenu: ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'],
+      bannerMenu: [
+        {
+          id: 'BM-001',
+          judul: 'Buku Menu & Kuliner Khas Nusantara',
+          url: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'
+        }
+      ],
       galeri: [
         {
           id: 'GL-001',
@@ -1257,54 +1271,96 @@
 
     /**
      * CONTROLLER MENU BANNER SLIDESHOW OTOMATIS (TAB BANNERMENU)
+     * Dual-Layer Anti-Crop & Dynamic Caption Nama Menu
      */
     var MENU_SLIDER = {
-      images: [],
+      items: [],
       currentIndex: 0,
       timer: null,
       intervalMs: 4000
     };
 
     function renderMenuBannerSlider() {
-      var images = APP_STATE.bannerMenu || [];
-      if (!Array.isArray(images) || images.length === 0) {
-        images = ['https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5'];
+      var rawItems = APP_STATE.bannerMenu || [];
+      if (!Array.isArray(rawItems) || rawItems.length === 0) {
+        rawItems = [{ id: 'BM-001', judul: 'Buku Menu & Kuliner Khas Nusantara', url: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5' }];
       }
-      initMenuSlider(images);
+      initMenuSlider(rawItems);
     }
 
-    function initMenuSlider(images) {
-      if (!images || images.length === 0) return;
-      MENU_SLIDER.images = images;
+    function initMenuSlider(rawItems) {
+      if (!rawItems || rawItems.length === 0) return;
+
+      // Normalisasi item: array string URL atau array objek { id, judul, url }
+      var items = [];
+      for (var i = 0; i < rawItems.length; i++) {
+        var it = rawItems[i];
+        if (typeof it === 'string') {
+          items.push({
+            id: 'BM-' + (i + 1),
+            judul: '',
+            url: formatDirectImageUrl(it)
+          });
+        } else if (it && typeof it === 'object') {
+          items.push({
+            id: it.id || ('BM-' + (i + 1)),
+            judul: it.judul || it.Judul || '',
+            url: formatDirectImageUrl(it.url || it.FotoURL || '')
+          });
+        }
+      }
+
+      if (items.length === 0) return;
+      MENU_SLIDER.items = items;
       MENU_SLIDER.currentIndex = 0;
 
       var wrapper = document.getElementById('menuSlidesWrapper');
       var dotsContainer = document.getElementById('menuSliderDots');
+      var captionElem = document.getElementById('menuSlideCaption');
       if (!wrapper) return;
 
       wrapper.innerHTML = '';
       if (dotsContainer) dotsContainer.innerHTML = '';
 
-      images.forEach(function (imgUrl, idx) {
+      // Tampilkan Keterangan Nama Menu slide pertama
+      if (captionElem) {
+        var firstTitle = items[0].judul;
+        if (firstTitle && firstTitle.trim() !== '') {
+          captionElem.textContent = firstTitle;
+          captionElem.style.display = 'block';
+        } else {
+          captionElem.style.display = 'none';
+        }
+      }
+
+      items.forEach(function (item, idx) {
         var slide = document.createElement('div');
-        slide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ' +
+        slide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out flex items-center justify-center overflow-hidden ' +
           (idx === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0');
         slide.id = 'menuSlide_' + idx;
 
+        // Layer 1: Ambient blur background (pengisi ruang estetik jika foto portrait/persegi)
+        var bgBlur = document.createElement('img');
+        bgBlur.src = item.url;
+        bgBlur.alt = '';
+        bgBlur.className = 'absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 pointer-events-none';
+
+        // Layer 2: Main image 100% utuh tanpa terpotong (object-contain)
         var img = document.createElement('img');
-        img.src = formatDirectImageUrl(imgUrl);
-        img.alt = 'Buku Menu Rumah Air Bogor ' + (idx + 1);
-        img.className = 'w-full h-full object-cover object-center transform transition-transform duration-[6000ms] ease-out ' +
+        img.src = item.url;
+        img.alt = item.judul || ('Buku Menu Rumah Air Bogor ' + (idx + 1));
+        img.className = 'relative z-10 max-w-full max-h-full object-contain drop-shadow-sm select-none transition-transform duration-[6000ms] ease-out ' +
           (idx === 0 ? 'scale-105' : 'scale-100');
         img.onerror = function () {
           this.onerror = null;
-          if (images.length > 1) slide.style.display = 'none';
+          if (items.length > 1) slide.style.display = 'none';
         };
 
+        slide.appendChild(bgBlur);
         slide.appendChild(img);
         wrapper.appendChild(slide);
 
-        if (images.length > 1 && dotsContainer) {
+        if (items.length > 1 && dotsContainer) {
           var dot = document.createElement('button');
           dot.type = 'button';
           dot.setAttribute('aria-label', 'Lihat banner menu ' + (idx + 1));
@@ -1316,31 +1372,44 @@
       });
 
       if (MENU_SLIDER.timer) clearInterval(MENU_SLIDER.timer);
-      if (images.length > 1) {
+      if (items.length > 1) {
         MENU_SLIDER.timer = setInterval(nextMenuSlide, MENU_SLIDER.intervalMs);
       }
     }
 
     function goToMenuSlide(newIndex) {
-      if (!MENU_SLIDER.images || MENU_SLIDER.images.length <= 1) return;
-      var total = MENU_SLIDER.images.length;
+      if (!MENU_SLIDER.items || MENU_SLIDER.items.length <= 1) return;
+      var total = MENU_SLIDER.items.length;
       var prevIndex = MENU_SLIDER.currentIndex;
       MENU_SLIDER.currentIndex = (newIndex + total) % total;
 
       var prevSlide = document.getElementById('menuSlide_' + prevIndex);
       var nextSlide = document.getElementById('menuSlide_' + MENU_SLIDER.currentIndex);
       var dots = document.getElementById('menuSliderDots') ? document.getElementById('menuSliderDots').children : [];
+      var captionElem = document.getElementById('menuSlideCaption');
 
       if (prevSlide) {
-        prevSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0';
-        var prevImg = prevSlide.querySelector('img');
-        if (prevImg) prevImg.classList.remove('scale-105');
+        prevSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 flex items-center justify-center overflow-hidden';
+        var prevImgs = prevSlide.querySelectorAll('img');
+        if (prevImgs.length > 1) prevImgs[1].classList.remove('scale-105');
       }
 
       if (nextSlide) {
-        nextSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-1';
-        var nextImg = nextSlide.querySelector('img');
-        if (nextImg) nextImg.classList.add('scale-105');
+        nextSlide.className = 'menu-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-1 flex items-center justify-center overflow-hidden';
+        var nextImgs = nextSlide.querySelectorAll('img');
+        if (nextImgs.length > 1) nextImgs[1].classList.add('scale-105');
+      }
+
+      // Perbarui Teks Keterangan Nama Menu
+      if (captionElem) {
+        var currentItem = MENU_SLIDER.items[MENU_SLIDER.currentIndex];
+        var title = currentItem ? currentItem.judul : '';
+        if (title && title.trim() !== '') {
+          captionElem.textContent = title;
+          captionElem.style.display = 'block';
+        } else {
+          captionElem.style.display = 'none';
+        }
       }
 
       for (var d = 0; d < dots.length; d++) {
@@ -1353,7 +1422,9 @@
     }
 
     function nextMenuSlide() {
-      goToMenuSlide(MENU_SLIDER.currentIndex + 1);
+      if (MENU_SLIDER.items && MENU_SLIDER.items.length > 1) {
+        goToMenuSlide(MENU_SLIDER.currentIndex + 1);
+      }
     }
 
     /**

@@ -372,7 +372,12 @@ function fetchPromoList(ss) {
 function fetchBannerMenuList(ss) {
   var sheet = ss.getSheetByName('BannerMenu');
   var bannerList = [];
-  var fallbackBanner = 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5';
+  var fallbackBanner = {
+    id: 'BM-001',
+    judul: 'Buku Menu & Kuliner Khas Nusantara',
+    url: 'https://lh3.googleusercontent.com/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5',
+    rawUrl: 'https://drive.google.com/file/d/1WTMWbiQ9B2S7F27ThIlJSdjwKVi6kEq5/view?usp=drive_link'
+  };
 
   if (!sheet || sheet.getLastRow() <= 1) {
     return [fallbackBanner];
@@ -383,11 +388,18 @@ function fetchBannerMenuList(ss) {
 
   for (var i = 0; i < rows.length; i++) {
     var row = rows[i];
-    var status = row[COL_BANNER_MENU.STATUS] ? row[COL_BANNER_MENU.STATUS].toString().trim() : 'Aktif';
+    var id = row[COL_BANNER_MENU.ID] ? row[COL_BANNER_MENU.ID].toString().trim() : ('BM-' + (i + 1));
+    var judul = row[COL_BANNER_MENU.JUDUL] ? row[COL_BANNER_MENU.JUDUL].toString().trim() : '';
     var rawUrl = row[COL_BANNER_MENU.FOTO] ? row[COL_BANNER_MENU.FOTO].toString().trim() : '';
+    var status = row[COL_BANNER_MENU.STATUS] ? row[COL_BANNER_MENU.STATUS].toString().trim() : 'Aktif';
 
     if (status.toLowerCase() === 'aktif' && rawUrl) {
-      bannerList.push(formatDirectImageUrl(rawUrl));
+      bannerList.push({
+        id: id,
+        judul: judul,
+        url: formatDirectImageUrl(rawUrl),
+        rawUrl: rawUrl
+      });
     }
   }
 
